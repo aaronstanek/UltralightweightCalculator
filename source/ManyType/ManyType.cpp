@@ -6,6 +6,7 @@
 
 /// Raw copies the bytes from other.
 /// Then default constructs other
+/// @param other the ManyType object to construct from
 /// @warning breaks const
 ManyType::ManyType(const ManyType& other) noexcept {
     label = other.label;
@@ -35,6 +36,7 @@ ManyType::~ManyType() noexcept {
 }
 
 /// Raw swaps the bytes in this object and other.
+/// @param other the ManyType object to swap contents with
 /// @warning breaks const
 void ManyType::operator=(const ManyType& other) noexcept {
     {
