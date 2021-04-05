@@ -83,21 +83,50 @@ const char* UserAlert::what() const noexcept {
 
 // load initial values
 
+/// Initial value is 500.
 long maximumRecursionDepth = 500;
+/// Initial value is 10000.
 long maximumLogicalRecursionDepth = 10000;
-double maximumProcessingTime = 120; // in seconds
-time_t processingStartTime; // initially undefined
+/// Initial value is 120. In seconds.
+double maximumProcessingTime = 120;
+/// Set to the current time when processing of
+/// a user input begins.
+/// Initially undefined.
+time_t processingStartTime;
 
+/// Stores an updated value of maximumRecursionDepth
+/// until the current user input has finished.
+/// A value of -1 indicates that maximumRecursionDepth should
+/// not be updated.
+/// Initial value is -1.
 long newMaximumRecursionDepth = -1;
+/// Stores an updated value of maximumLogicalRecursionDepth
+/// until the current user input has finished.
+/// A value of -1 indicates that maximumLogicalRecursionDepth should
+/// not be updated.
+/// Initial value is -1.
 long newMaximumLogicalRecursionDepth = -1;
+/// Stores an updated value of maximumProcessingTime
+/// until the current user input has finished.
+/// A value of -1 indicates that maximumProcessingTime should
+/// not be updated.
+/// Initial value is -1.
 double newMaximumProcessingTime = -1;
 
+/// @throw UserAlert if time elapsed since processingStartTime
+/// is greater than or equal to maximumProcessingTime
 void checkProcessingTime() {
     if (difftime(time(NULL),processingStartTime) >= maximumProcessingTime) {
         throw UserAlert(UserMessage::Timeout,nullptr);
     }
 }
 
+/// Updates maximumRecursionDepth, maximumLogicalRecursionDepth,
+/// and maximumProcessingTime, if indicated by newMaximumRecursionDepth,
+/// newMaximumLogicalRecursionDepth, and newMaximumProcessingTime, respectively.
+/// newMaximumRecursionDepth, newMaximumLogicalRecursionDepth,
+/// and newMaximumProcessingTime will be set to -1 if the corresponding
+/// value was updated.
 void applyNewLimits() noexcept {
     if (newMaximumRecursionDepth > 0) {
         maximumRecursionDepth = newMaximumRecursionDepth;

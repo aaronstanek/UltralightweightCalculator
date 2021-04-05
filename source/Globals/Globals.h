@@ -67,11 +67,19 @@ void applyNewLimits() noexcept;
 #define MAX_maximumRecursionDepth 1000000
 #define MIN_maximumRecursionDepth 10
 #define MIN_maximumLogicalRecursionDepth 10
+/// In seconds.
 #define MAX_maximumProcessingTime 86401
+/// In seconds.
 #define MIN_maximumProcessingTime 3
 
+/// Maximum number of elements in a StructureVector
+/// representing a function definition
 #define MAX_ARGS_DEF 128
+/// Maximum number of elements in a StructureVector
+/// representing a function call
 #define MAX_ARGS_USED 65536
+/// Maximum number of elements in a DataVector.
+/// Maximum number of bytes in the user input.
 #define MAX_INPUT_SIZE 1048576
 
 // 32 bit integer limits
