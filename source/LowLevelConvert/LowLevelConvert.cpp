@@ -4,6 +4,11 @@
 */
 #include "LowLevelConvert.h"
 
+/// provides platform-independent conversion from long to unsigned long
+/// @param x the number to convert
+/// @return x + ( 2^31 - 1 )
+/// @warning x cannot be equal to or greater than (2^31)
+/// @warning x cannot be equal to or less than -(2^31)
 unsigned long convertSignedToUnsigned(const long x) noexcept {
     // platform-independent safe convert
     if (x >= 0) {
@@ -14,6 +19,10 @@ unsigned long convertSignedToUnsigned(const long x) noexcept {
     }
 }
 
+/// provides platform-independent conversion from unsigned long to long
+/// @param x the number to convert
+/// @return x - ( 2^31 - 1 )
+/// @warning x cannot be equal to or greater than ( 2^32 - 1 )
 long convertUnsignedToSigned(const unsigned long x) noexcept {
     // platform-independent safe convert
     if (x >= (unsigned long)(MAX_INTEGER_VALUE)) {
@@ -24,6 +33,11 @@ long convertUnsignedToSigned(const unsigned long x) noexcept {
     }
 }
 
+/// Converts a ManyType object in-place.
+/// The type of the ManyType object after
+/// this operation will be Bool.
+/// @param x the object to convert
+/// @throw UserAlert if the value of x cannot be converted to bool
 void convertToBool(ManyType& x) {
     // in-place
     switch (x.type()) {
@@ -51,6 +65,11 @@ void convertToBool(ManyType& x) {
     }
 }
 
+/// Converts a ManyType object in-place.
+/// The type of the ManyType object after
+/// this operation will be Int.
+/// @param x the object to convert
+/// @throw UserAlert if the value of x cannot be converted to long
 void convertToInt(ManyType& x) {
     // in-place
     switch (x.type()) {
@@ -85,6 +104,11 @@ void convertToInt(ManyType& x) {
     }
 }
 
+/// Converts a ManyType object in-place.
+/// The type of the ManyType object after
+/// this operation will be Float.
+/// @param x the object to convert
+/// @throw UserAlert if the value of x cannot be converted to ftype
 void convertToFtype(ManyType& x) {
     // in-place
     switch (x.type()) {
@@ -110,6 +134,12 @@ void convertToFtype(ManyType& x) {
     }
 }
 
+/// Converts a ManyType object in-place.
+/// The type of the ManyType object after
+/// this operation will be StructureString.
+/// @param x the object to convert
+/// @throw UserAlert if the value of x cannot be converted
+/// to a syntactically correct StructureString
 void convertToStructureString(ManyType& x) {
     if (static_cast<ManyTypeLabelInt>(x.type()) & ~static_cast<ManyTypeLabelInt>(ManyTypeLabel::String)) {
         throw UserAlert(UserMessage::StructureStringFormatError,"Not a String");

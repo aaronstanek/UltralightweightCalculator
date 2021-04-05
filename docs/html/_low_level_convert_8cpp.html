@@ -114,6 +114,16 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>provides platform-independent conversion from long to unsigned long </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the number to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>x + ( 2^31 - 1 ) </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>x cannot be equal to or greater than (2^31) </dd>
+<dd>
+x cannot be equal to or less than -(2^31) </dd></dl>
 
 </div>
 </div>
@@ -132,6 +142,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Converts a <a class="el" href="class_many_type.html">ManyType</a> object in-place. The type of the <a class="el" href="class_many_type.html">ManyType</a> object after this operation will be Bool. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the object to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="struct_user_alert.html">UserAlert</a></td><td>if the value of x cannot be converted to bool </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -150,6 +172,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Converts a <a class="el" href="class_many_type.html">ManyType</a> object in-place. The type of the <a class="el" href="class_many_type.html">ManyType</a> object after this operation will be Float. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the object to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="struct_user_alert.html">UserAlert</a></td><td>if the value of x cannot be converted to ftype </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -168,6 +202,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Converts a <a class="el" href="class_many_type.html">ManyType</a> object in-place. The type of the <a class="el" href="class_many_type.html">ManyType</a> object after this operation will be Int. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the object to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="struct_user_alert.html">UserAlert</a></td><td>if the value of x cannot be converted to long </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -186,6 +232,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Converts a <a class="el" href="class_many_type.html">ManyType</a> object in-place. The type of the <a class="el" href="class_many_type.html">ManyType</a> object after this operation will be StructureString. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the object to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="struct_user_alert.html">UserAlert</a></td><td>if the value of x cannot be converted to a syntactically correct StructureString </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -212,6 +270,14 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>provides platform-independent conversion from unsigned long to long </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the number to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>x - ( 2^31 - 1 ) </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>x cannot be equal to or greater than ( 2^32 - 1 ) </dd></dl>
 
 </div>
 </div>

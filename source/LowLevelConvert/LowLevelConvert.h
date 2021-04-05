@@ -12,10 +12,10 @@ unsigned long convertSignedToUnsigned(const long) noexcept;
 
 long convertUnsignedToSigned(const unsigned long) noexcept;
 
-void convertToBool(ManyType&); // in-place
+void convertToBool(ManyType&);
 
-void convertToInt(ManyType&); // in-place
+void convertToInt(ManyType&);
 
-void convertToFtype(ManyType&); // in-place
+void convertToFtype(ManyType&);
 
-void convertToStructureString(ManyType&); // in-place
+void convertToStructureString(ManyType&);
