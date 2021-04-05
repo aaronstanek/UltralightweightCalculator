@@ -5,7 +5,7 @@
 #include "ManyType.h"
 
 /// Raw copies the bytes from other.
-/// Then default constructs other
+/// Then default constructs other.
 /// @param other the ManyType object to construct from
 /// @warning breaks const
 ManyType::ManyType(const ManyType& other) noexcept {
