@@ -122,6 +122,16 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Increments the state of the program's pseudorandom number generator. Then returns a pseudorandom number. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">minValue</td><td>the smallest desired result </td></tr>
+    <tr><td class="paramname">maxValue</td><td>the largest desired result </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An integer in the range minValue &lt;= value &lt;= maxValue. The result will be uniformly distributed over this range. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The following inequality must hold:<br  />
+-( 2^31 - 1 ) &lt;= minValue &lt;= maxValue &lt;= ( 2^31 - 1 ) </dd></dl>
 
 </div>
 </div>
@@ -147,6 +157,7 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Increments the state of the program's pseudorandom number generator. Then returns a pseudorandom number. </p><dl class="section return"><dt>Returns</dt><dd>A nonnegative integer. The least significant 32 bits of which are uniformly distributed across the range 0 &lt;= value &lt; (2^32). </dd></dl>
 
 </div>
 </div>
