@@ -1,3 +1,7 @@
+/**
+ * @file Globals.cpp
+ * @author Aaron Stanek
+*/
 #include "Globals.h"
 
 UserAlert::UserAlert(const UserMessage base, const char* const extra) {

@@ -1,3 +1,7 @@
+/**
+ * @file main.cpp
+ * @author Aaron Stanek
+*/
 #include "Globals/StaticAssert.h"
 // also includes Globals.h
 

@@ -1,3 +1,9 @@
+/**
+ * @file RNG.h
+ * @author Aaron Stanek
+ * @brief Functions for generating
+ * pseudorandom numbers.
+*/
 #pragma once
 #include "Globals.h"
 

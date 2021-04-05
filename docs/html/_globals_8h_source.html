@@ -69,95 +69,96 @@ $(function() {
 <div class="title">Globals.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_globals_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// include all the common library stuff</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="_globals_8h.html#a525335710b53cb064ca56b936120431e">    4</a></span>&#160;<span class="preprocessor">#define _USE_MATH_DEFINES</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;exception&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// include a definition of ftype</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// also includes float.h</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_ftype_8h.html">Ftype.h</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caa">   16</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caa">UserMessage</a>: uint_fast8_t {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaabfaef30f1c8011c5cefa38ae470fb7aa">UnknownError</a>,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">// meta</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa50176b2c1b22f986140b57163c7985f9">MaximumRecursionDepthReached</a>,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa8d7d52f62108fb579b2fc596f9d321f3">MaximumLogicalRecursionDepthReached</a>,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaac85a251cc457840f1e032f1b733e9398">Timeout</a>,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa42727da2aaf9e60c6eea683aab391b43">StructureStringFormatError</a>,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">// text processing</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa7db9772c027c2721b882311b805a22e6">InputTooLong</a>,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa2de55882a40b70aee40d05cf973b0699">InvalidCharacter</a>,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaaece592fd242f4ba674cc9da539a625a7">SyntaxError</a>,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// evaluation</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa0672fff0b8a55567f4c8fc02a020c470">WriteToBuiltInSymbol</a>,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa833644b8af94e30fa178defc26aa1873">UnknownSymbol</a>,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaab8d0225dd5541d21fbf8c1124271272f">WrongNumberOfArguments</a>,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaae0d97eb243248e1e36eb544576b159fb">TooManyArguments</a>,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa9c3a14657699b5629ab0212fc3267033">UnexpectedType</a>,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa975bdf758f1a3bd1b4826bee2f21eb0a">DomainError</a>,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa38fb446a8115714093d8b8b2f3e6ebc8">NanError</a>,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa82302aaa366db70dc445821b3d5f735b">InfinityError</a></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="struct_user_alert.html">   38</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_user_alert.html">UserAlert</a> : <span class="keyword">public</span> std::exception {</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="struct_user_alert.html#a30dfb0373b9bc1064bd2bfa3b10eb14f">   39</a></span>&#160;    std::string <a class="code" href="struct_user_alert.html#a30dfb0373b9bc1064bd2bfa3b10eb14f">message</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="struct_user_alert.html#af439ee39a93112e691b9a036a8bfab93">UserAlert</a>(<span class="keyword">const</span> <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caa">UserMessage</a>, <span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="struct_user_alert.html#a99c67902b074922b515487ee3eff37dc">what</a>() const noexcept;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;extern <span class="keywordtype">long</span> <a class="code" href="_globals_8h.html#a45c1fe50aee1e7aab50df409a0f71ea1">maximumRecursionDepth</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;extern <span class="keywordtype">long</span> <a class="code" href="_globals_8h.html#aa13d6616b1d44e81a9a383e13fb498e8">maximumLogicalRecursionDepth</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;extern <span class="keywordtype">double</span> <a class="code" href="_globals_8h.html#a79f5580af16d01adf932b59dbf577ebe">maximumProcessingTime</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;extern time_t <a class="code" href="_globals_8h.html#a8746c327d260c031ddba4addda15e3c7">processingStartTime</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// add places to hold updated values</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;extern <span class="keywordtype">long</span> <a class="code" href="_globals_8h.html#aa8582a617beea03e153bbfb5509928df">newMaximumRecursionDepth</a>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;extern <span class="keywordtype">long</span> <a class="code" href="_globals_8h.html#a51956bcf8a1c30b34cd16469e0515a20">newMaximumLogicalRecursionDepth</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;extern <span class="keywordtype">double</span> <a class="code" href="_globals_8h.html#a982e89e483bbc6095de14d96ba30fc1d">newMaximumProcessingTime</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_globals_8h.html#aef2efe42d14852bf6f90ff2391d1dcd9">checkProcessingTime</a>();</div>
+<a href="_globals_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// include all the common library stuff</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="_globals_8h.html#a525335710b53cb064ca56b936120431e">   12</a></span>&#160;<span class="preprocessor">#define _USE_MATH_DEFINES</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;exception&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// include a definition of ftype</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// also includes float.h</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_ftype_8h.html">Ftype.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caa">   24</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caa">UserMessage</a>: uint_fast8_t {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaabfaef30f1c8011c5cefa38ae470fb7aa">UnknownError</a>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// meta</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa50176b2c1b22f986140b57163c7985f9">MaximumRecursionDepthReached</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa8d7d52f62108fb579b2fc596f9d321f3">MaximumLogicalRecursionDepthReached</a>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaac85a251cc457840f1e032f1b733e9398">Timeout</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa42727da2aaf9e60c6eea683aab391b43">StructureStringFormatError</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// text processing</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa7db9772c027c2721b882311b805a22e6">InputTooLong</a>,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa2de55882a40b70aee40d05cf973b0699">InvalidCharacter</a>,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaaece592fd242f4ba674cc9da539a625a7">SyntaxError</a>,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// evaluation</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa0672fff0b8a55567f4c8fc02a020c470">WriteToBuiltInSymbol</a>,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa833644b8af94e30fa178defc26aa1873">UnknownSymbol</a>,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaab8d0225dd5541d21fbf8c1124271272f">WrongNumberOfArguments</a>,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaae0d97eb243248e1e36eb544576b159fb">TooManyArguments</a>,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa9c3a14657699b5629ab0212fc3267033">UnexpectedType</a>,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa975bdf758f1a3bd1b4826bee2f21eb0a">DomainError</a>,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa38fb446a8115714093d8b8b2f3e6ebc8">NanError</a>,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa82302aaa366db70dc445821b3d5f735b">InfinityError</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="struct_user_alert.html">   46</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_user_alert.html">UserAlert</a> : <span class="keyword">public</span> std::exception {</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="struct_user_alert.html#a30dfb0373b9bc1064bd2bfa3b10eb14f">   47</a></span>&#160;    std::string <a class="code" href="struct_user_alert.html#a30dfb0373b9bc1064bd2bfa3b10eb14f">message</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="struct_user_alert.html#af439ee39a93112e691b9a036a8bfab93">UserAlert</a>(<span class="keyword">const</span> <a class="code" href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caa">UserMessage</a>, <span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="struct_user_alert.html#a99c67902b074922b515487ee3eff37dc">what</a>() const noexcept;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;extern <span class="keywordtype">long</span> <a class="code" href="_globals_8h.html#a45c1fe50aee1e7aab50df409a0f71ea1">maximumRecursionDepth</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;extern <span class="keywordtype">long</span> <a class="code" href="_globals_8h.html#aa13d6616b1d44e81a9a383e13fb498e8">maximumLogicalRecursionDepth</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;extern <span class="keywordtype">double</span> <a class="code" href="_globals_8h.html#a79f5580af16d01adf932b59dbf577ebe">maximumProcessingTime</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;extern time_t <a class="code" href="_globals_8h.html#a8746c327d260c031ddba4addda15e3c7">processingStartTime</a>;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_globals_8h.html#a1c1681f5c435c3764281b153f783bf7d">applyNewLimits</a>() noexcept;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// add places to hold updated values</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="_globals_8h.html#aca6115478b2abf7915b6699a2a2de074">   59</a></span>&#160;<span class="preprocessor">#define MAX_maximumRecursionDepth 1000000</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="_globals_8h.html#a2fca89947ce909951e6ff0cf25ec7b01">   60</a></span>&#160;<span class="preprocessor">#define MIN_maximumRecursionDepth 10</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="_globals_8h.html#abe2d30d037eb7af34606adf14d11c922">   61</a></span>&#160;<span class="preprocessor">#define MIN_maximumLogicalRecursionDepth 10</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="_globals_8h.html#a4a14459b935f40e82d426edc95fb963b">   62</a></span>&#160;<span class="preprocessor">#define MAX_maximumProcessingTime 86401</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="_globals_8h.html#a04808feebbe504adb8668457fcb8f7ba">   63</a></span>&#160;<span class="preprocessor">#define MIN_maximumProcessingTime 3</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;extern <span class="keywordtype">long</span> <a class="code" href="_globals_8h.html#aa8582a617beea03e153bbfb5509928df">newMaximumRecursionDepth</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;extern <span class="keywordtype">long</span> <a class="code" href="_globals_8h.html#a51956bcf8a1c30b34cd16469e0515a20">newMaximumLogicalRecursionDepth</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;extern <span class="keywordtype">double</span> <a class="code" href="_globals_8h.html#a982e89e483bbc6095de14d96ba30fc1d">newMaximumProcessingTime</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_globals_8h.html#aef2efe42d14852bf6f90ff2391d1dcd9">checkProcessingTime</a>();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="_globals_8h.html#adcc578eecae8c7db8fc358ee6c274794">   65</a></span>&#160;<span class="preprocessor">#define MAX_ARGS_DEF 128</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="_globals_8h.html#a3bc569434a436eea4c61d0475a26e74a">   66</a></span>&#160;<span class="preprocessor">#define MAX_ARGS_USED 65536</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="_globals_8h.html#a479e2087967dffd589c1b8b65c8e65e6">   67</a></span>&#160;<span class="preprocessor">#define MAX_INPUT_SIZE 1048576</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// 32 bit integer limits</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="_globals_8h.html#a74bbca0b51342a095149dd247d12c91e">   70</a></span>&#160;<span class="preprocessor">#define MAX_INTEGER_VALUE 2147483647</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="_globals_8h.html#a567a6b799b24c2014bdc70dee5a083f5">   71</a></span>&#160;<span class="preprocessor">#define MIN_INTEGER_VALUE -2147483647</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="_globals_8h.html#ab2e2ae7560785a748ec5cacc6e3c6617">   72</a></span>&#160;<span class="preprocessor">#define MAX_UNSIGNED_INTEGER_VALUE 4294967295</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">// INT32_MIN and INT32_MAX are only defined</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">// if that exact sized integer is supported</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// INT32_MIN will be one less than MIN_INTEGER_VALUE on</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">// all 2&#39;s complement systems, but to maintain</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">// compatibility with 1&#39;s complement and</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">// sign-magnitude systems, we will only use the range that</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">// is strictly required by the standard</span></div>
-<div class="ttc" id="a_ftype_8h_html"><div class="ttname"><a href="_ftype_8h.html">Ftype.h</a></div></div>
-<div class="ttc" id="a_globals_8h_html_a1c1681f5c435c3764281b153f783bf7d"><div class="ttname"><a href="_globals_8h.html#a1c1681f5c435c3764281b153f783bf7d">applyNewLimits</a></div><div class="ttdeci">void applyNewLimits() noexcept</div><div class="ttdef"><b>Definition:</b> Globals.cpp:97</div></div>
-<div class="ttc" id="a_globals_8h_html_a45c1fe50aee1e7aab50df409a0f71ea1"><div class="ttname"><a href="_globals_8h.html#a45c1fe50aee1e7aab50df409a0f71ea1">maximumRecursionDepth</a></div><div class="ttdeci">long maximumRecursionDepth</div><div class="ttdef"><b>Definition:</b> Globals.cpp:82</div></div>
-<div class="ttc" id="a_globals_8h_html_a51956bcf8a1c30b34cd16469e0515a20"><div class="ttname"><a href="_globals_8h.html#a51956bcf8a1c30b34cd16469e0515a20">newMaximumLogicalRecursionDepth</a></div><div class="ttdeci">long newMaximumLogicalRecursionDepth</div><div class="ttdef"><b>Definition:</b> Globals.cpp:88</div></div>
-<div class="ttc" id="a_globals_8h_html_a79f5580af16d01adf932b59dbf577ebe"><div class="ttname"><a href="_globals_8h.html#a79f5580af16d01adf932b59dbf577ebe">maximumProcessingTime</a></div><div class="ttdeci">double maximumProcessingTime</div><div class="ttdef"><b>Definition:</b> Globals.cpp:84</div></div>
-<div class="ttc" id="a_globals_8h_html_a8746c327d260c031ddba4addda15e3c7"><div class="ttname"><a href="_globals_8h.html#a8746c327d260c031ddba4addda15e3c7">processingStartTime</a></div><div class="ttdeci">time_t processingStartTime</div><div class="ttdef"><b>Definition:</b> Globals.cpp:85</div></div>
-<div class="ttc" id="a_globals_8h_html_a982e89e483bbc6095de14d96ba30fc1d"><div class="ttname"><a href="_globals_8h.html#a982e89e483bbc6095de14d96ba30fc1d">newMaximumProcessingTime</a></div><div class="ttdeci">double newMaximumProcessingTime</div><div class="ttdef"><b>Definition:</b> Globals.cpp:89</div></div>
-<div class="ttc" id="a_globals_8h_html_aa13d6616b1d44e81a9a383e13fb498e8"><div class="ttname"><a href="_globals_8h.html#aa13d6616b1d44e81a9a383e13fb498e8">maximumLogicalRecursionDepth</a></div><div class="ttdeci">long maximumLogicalRecursionDepth</div><div class="ttdef"><b>Definition:</b> Globals.cpp:83</div></div>
-<div class="ttc" id="a_globals_8h_html_aa8582a617beea03e153bbfb5509928df"><div class="ttname"><a href="_globals_8h.html#aa8582a617beea03e153bbfb5509928df">newMaximumRecursionDepth</a></div><div class="ttdeci">long newMaximumRecursionDepth</div><div class="ttdef"><b>Definition:</b> Globals.cpp:87</div></div>
-<div class="ttc" id="a_globals_8h_html_adfc62a31d9894b1fab1ef28ed6557caa"><div class="ttname"><a href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caa">UserMessage</a></div><div class="ttdeci">UserMessage</div><div class="ttdef"><b>Definition:</b> Globals.h:16</div></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_globals_8h.html#a1c1681f5c435c3764281b153f783bf7d">applyNewLimits</a>() noexcept;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="_globals_8h.html#aca6115478b2abf7915b6699a2a2de074">   67</a></span>&#160;<span class="preprocessor">#define MAX_maximumRecursionDepth 1000000</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="_globals_8h.html#a2fca89947ce909951e6ff0cf25ec7b01">   68</a></span>&#160;<span class="preprocessor">#define MIN_maximumRecursionDepth 10</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="_globals_8h.html#abe2d30d037eb7af34606adf14d11c922">   69</a></span>&#160;<span class="preprocessor">#define MIN_maximumLogicalRecursionDepth 10</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="_globals_8h.html#a4a14459b935f40e82d426edc95fb963b">   70</a></span>&#160;<span class="preprocessor">#define MAX_maximumProcessingTime 86401</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="_globals_8h.html#a04808feebbe504adb8668457fcb8f7ba">   71</a></span>&#160;<span class="preprocessor">#define MIN_maximumProcessingTime 3</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="_globals_8h.html#adcc578eecae8c7db8fc358ee6c274794">   73</a></span>&#160;<span class="preprocessor">#define MAX_ARGS_DEF 128</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="_globals_8h.html#a3bc569434a436eea4c61d0475a26e74a">   74</a></span>&#160;<span class="preprocessor">#define MAX_ARGS_USED 65536</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="_globals_8h.html#a479e2087967dffd589c1b8b65c8e65e6">   75</a></span>&#160;<span class="preprocessor">#define MAX_INPUT_SIZE 1048576</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">// 32 bit integer limits</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="_globals_8h.html#a74bbca0b51342a095149dd247d12c91e">   78</a></span>&#160;<span class="preprocessor">#define MAX_INTEGER_VALUE 2147483647</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="_globals_8h.html#a567a6b799b24c2014bdc70dee5a083f5">   79</a></span>&#160;<span class="preprocessor">#define MIN_INTEGER_VALUE -2147483647</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="_globals_8h.html#ab2e2ae7560785a748ec5cacc6e3c6617">   80</a></span>&#160;<span class="preprocessor">#define MAX_UNSIGNED_INTEGER_VALUE 4294967295</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">// INT32_MIN and INT32_MAX are only defined</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">// if that exact sized integer is supported</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">// INT32_MIN will be one less than MIN_INTEGER_VALUE on</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">// all 2&#39;s complement systems, but to maintain</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">// compatibility with 1&#39;s complement and</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">// sign-magnitude systems, we will only use the range that</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// is strictly required by the standard</span></div>
+<div class="ttc" id="a_ftype_8h_html"><div class="ttname"><a href="_ftype_8h.html">Ftype.h</a></div><div class="ttdoc">Defines ftype, FTYPE_PRECISION, FTYPE_EXPONENT_MIN, FTYPE_EXPONENT_MAX.</div></div>
+<div class="ttc" id="a_globals_8h_html_a1c1681f5c435c3764281b153f783bf7d"><div class="ttname"><a href="_globals_8h.html#a1c1681f5c435c3764281b153f783bf7d">applyNewLimits</a></div><div class="ttdeci">void applyNewLimits() noexcept</div><div class="ttdef"><b>Definition:</b> Globals.cpp:101</div></div>
+<div class="ttc" id="a_globals_8h_html_a45c1fe50aee1e7aab50df409a0f71ea1"><div class="ttname"><a href="_globals_8h.html#a45c1fe50aee1e7aab50df409a0f71ea1">maximumRecursionDepth</a></div><div class="ttdeci">long maximumRecursionDepth</div><div class="ttdef"><b>Definition:</b> Globals.cpp:86</div></div>
+<div class="ttc" id="a_globals_8h_html_a51956bcf8a1c30b34cd16469e0515a20"><div class="ttname"><a href="_globals_8h.html#a51956bcf8a1c30b34cd16469e0515a20">newMaximumLogicalRecursionDepth</a></div><div class="ttdeci">long newMaximumLogicalRecursionDepth</div><div class="ttdef"><b>Definition:</b> Globals.cpp:92</div></div>
+<div class="ttc" id="a_globals_8h_html_a79f5580af16d01adf932b59dbf577ebe"><div class="ttname"><a href="_globals_8h.html#a79f5580af16d01adf932b59dbf577ebe">maximumProcessingTime</a></div><div class="ttdeci">double maximumProcessingTime</div><div class="ttdef"><b>Definition:</b> Globals.cpp:88</div></div>
+<div class="ttc" id="a_globals_8h_html_a8746c327d260c031ddba4addda15e3c7"><div class="ttname"><a href="_globals_8h.html#a8746c327d260c031ddba4addda15e3c7">processingStartTime</a></div><div class="ttdeci">time_t processingStartTime</div><div class="ttdef"><b>Definition:</b> Globals.cpp:89</div></div>
+<div class="ttc" id="a_globals_8h_html_a982e89e483bbc6095de14d96ba30fc1d"><div class="ttname"><a href="_globals_8h.html#a982e89e483bbc6095de14d96ba30fc1d">newMaximumProcessingTime</a></div><div class="ttdeci">double newMaximumProcessingTime</div><div class="ttdef"><b>Definition:</b> Globals.cpp:93</div></div>
+<div class="ttc" id="a_globals_8h_html_aa13d6616b1d44e81a9a383e13fb498e8"><div class="ttname"><a href="_globals_8h.html#aa13d6616b1d44e81a9a383e13fb498e8">maximumLogicalRecursionDepth</a></div><div class="ttdeci">long maximumLogicalRecursionDepth</div><div class="ttdef"><b>Definition:</b> Globals.cpp:87</div></div>
+<div class="ttc" id="a_globals_8h_html_aa8582a617beea03e153bbfb5509928df"><div class="ttname"><a href="_globals_8h.html#aa8582a617beea03e153bbfb5509928df">newMaximumRecursionDepth</a></div><div class="ttdeci">long newMaximumRecursionDepth</div><div class="ttdef"><b>Definition:</b> Globals.cpp:91</div></div>
+<div class="ttc" id="a_globals_8h_html_adfc62a31d9894b1fab1ef28ed6557caa"><div class="ttname"><a href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caa">UserMessage</a></div><div class="ttdeci">UserMessage</div><div class="ttdef"><b>Definition:</b> Globals.h:24</div></div>
 <div class="ttc" id="a_globals_8h_html_adfc62a31d9894b1fab1ef28ed6557caaa0672fff0b8a55567f4c8fc02a020c470"><div class="ttname"><a href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa0672fff0b8a55567f4c8fc02a020c470">UserMessage::WriteToBuiltInSymbol</a></div><div class="ttdeci">@ WriteToBuiltInSymbol</div></div>
 <div class="ttc" id="a_globals_8h_html_adfc62a31d9894b1fab1ef28ed6557caaa2de55882a40b70aee40d05cf973b0699"><div class="ttname"><a href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa2de55882a40b70aee40d05cf973b0699">UserMessage::InvalidCharacter</a></div><div class="ttdeci">@ InvalidCharacter</div></div>
 <div class="ttc" id="a_globals_8h_html_adfc62a31d9894b1fab1ef28ed6557caaa38fb446a8115714093d8b8b2f3e6ebc8"><div class="ttname"><a href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa38fb446a8115714093d8b8b2f3e6ebc8">UserMessage::NanError</a></div><div class="ttdeci">@ NanError</div></div>
@@ -174,11 +175,11 @@ $(function() {
 <div class="ttc" id="a_globals_8h_html_adfc62a31d9894b1fab1ef28ed6557caaac85a251cc457840f1e032f1b733e9398"><div class="ttname"><a href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaac85a251cc457840f1e032f1b733e9398">UserMessage::Timeout</a></div><div class="ttdeci">@ Timeout</div></div>
 <div class="ttc" id="a_globals_8h_html_adfc62a31d9894b1fab1ef28ed6557caaae0d97eb243248e1e36eb544576b159fb"><div class="ttname"><a href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaae0d97eb243248e1e36eb544576b159fb">UserMessage::TooManyArguments</a></div><div class="ttdeci">@ TooManyArguments</div></div>
 <div class="ttc" id="a_globals_8h_html_adfc62a31d9894b1fab1ef28ed6557caaaece592fd242f4ba674cc9da539a625a7"><div class="ttname"><a href="_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaaece592fd242f4ba674cc9da539a625a7">UserMessage::SyntaxError</a></div><div class="ttdeci">@ SyntaxError</div></div>
-<div class="ttc" id="a_globals_8h_html_aef2efe42d14852bf6f90ff2391d1dcd9"><div class="ttname"><a href="_globals_8h.html#aef2efe42d14852bf6f90ff2391d1dcd9">checkProcessingTime</a></div><div class="ttdeci">void checkProcessingTime()</div><div class="ttdef"><b>Definition:</b> Globals.cpp:91</div></div>
-<div class="ttc" id="astruct_user_alert_html"><div class="ttname"><a href="struct_user_alert.html">UserAlert</a></div><div class="ttdef"><b>Definition:</b> Globals.h:38</div></div>
-<div class="ttc" id="astruct_user_alert_html_a30dfb0373b9bc1064bd2bfa3b10eb14f"><div class="ttname"><a href="struct_user_alert.html#a30dfb0373b9bc1064bd2bfa3b10eb14f">UserAlert::message</a></div><div class="ttdeci">std::string message</div><div class="ttdef"><b>Definition:</b> Globals.h:39</div></div>
-<div class="ttc" id="astruct_user_alert_html_a99c67902b074922b515487ee3eff37dc"><div class="ttname"><a href="struct_user_alert.html#a99c67902b074922b515487ee3eff37dc">UserAlert::what</a></div><div class="ttdeci">const char * what() const noexcept</div><div class="ttdef"><b>Definition:</b> Globals.cpp:76</div></div>
-<div class="ttc" id="astruct_user_alert_html_af439ee39a93112e691b9a036a8bfab93"><div class="ttname"><a href="struct_user_alert.html#af439ee39a93112e691b9a036a8bfab93">UserAlert::UserAlert</a></div><div class="ttdeci">UserAlert(const UserMessage, const char *const)</div><div class="ttdef"><b>Definition:</b> Globals.cpp:3</div></div>
+<div class="ttc" id="a_globals_8h_html_aef2efe42d14852bf6f90ff2391d1dcd9"><div class="ttname"><a href="_globals_8h.html#aef2efe42d14852bf6f90ff2391d1dcd9">checkProcessingTime</a></div><div class="ttdeci">void checkProcessingTime()</div><div class="ttdef"><b>Definition:</b> Globals.cpp:95</div></div>
+<div class="ttc" id="astruct_user_alert_html"><div class="ttname"><a href="struct_user_alert.html">UserAlert</a></div><div class="ttdef"><b>Definition:</b> Globals.h:46</div></div>
+<div class="ttc" id="astruct_user_alert_html_a30dfb0373b9bc1064bd2bfa3b10eb14f"><div class="ttname"><a href="struct_user_alert.html#a30dfb0373b9bc1064bd2bfa3b10eb14f">UserAlert::message</a></div><div class="ttdeci">std::string message</div><div class="ttdef"><b>Definition:</b> Globals.h:47</div></div>
+<div class="ttc" id="astruct_user_alert_html_a99c67902b074922b515487ee3eff37dc"><div class="ttname"><a href="struct_user_alert.html#a99c67902b074922b515487ee3eff37dc">UserAlert::what</a></div><div class="ttdeci">const char * what() const noexcept</div><div class="ttdef"><b>Definition:</b> Globals.cpp:80</div></div>
+<div class="ttc" id="astruct_user_alert_html_af439ee39a93112e691b9a036a8bfab93"><div class="ttname"><a href="struct_user_alert.html#af439ee39a93112e691b9a036a8bfab93">UserAlert::UserAlert</a></div><div class="ttdeci">UserAlert(const UserMessage, const char *const)</div><div class="ttdef"><b>Definition:</b> Globals.cpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

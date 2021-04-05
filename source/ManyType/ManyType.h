@@ -1,3 +1,9 @@
+/**
+ * @file ManyType.h
+ * @author Aaron Stanek
+ * @brief Classes for holding numeric
+ * and std types in a union
+*/
 #pragma once
 #include "../Globals/Globals.h"
 

@@ -1,3 +1,7 @@
+/**
+ * @file RNG.cpp
+ * @author Aaron Stanek
+*/
 #include "RNG.h"
 #include "../LowLevelConvert/LowLevelConvert.h"
 

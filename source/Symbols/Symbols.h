@@ -1,3 +1,11 @@
+/**
+ * @file Symbols.h
+ * @author Aaron Stanek
+ * @brief Structs and functions
+ * for mapping language symbol names
+ * to their values, including built-in
+ * function lookup
+*/
 #pragma once
 #include "../Globals/Globals.h"
 #include "../ManyType/ManyType.h"

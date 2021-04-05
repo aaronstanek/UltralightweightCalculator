@@ -1,3 +1,11 @@
+/**
+ * @file Globals.h
+ * @author Aaron Stanek
+ * @brief Imports common library modules,
+ * defines UserAlert exception,
+ * manages global variables,
+ * defines numeric limit macros
+*/
 #pragma once
 
 // include all the common library stuff

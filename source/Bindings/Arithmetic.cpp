@@ -1,3 +1,7 @@
+/**
+ * @file Arithmetic.cpp
+ * @author Aaron Stanek
+*/
 #include "Bindings.h"
 #include "../LowLevelConvert/LowLevelConvert.h"
 #include "../Symbols/Symbols.h"

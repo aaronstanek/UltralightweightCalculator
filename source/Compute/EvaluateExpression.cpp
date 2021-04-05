@@ -1,3 +1,7 @@
+/**
+ * @file EvaluateExpression.cpp
+ * @author Aaron Stanek
+*/
 #include "EvaluateExpression.h"
 #include "LoadUserSymbol.h"
 #include "../Symbols/Symbols.h"

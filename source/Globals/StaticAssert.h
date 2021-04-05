@@ -1,3 +1,10 @@
+/**
+ * @file StaticAssert.h
+ * @author Aaron Stanek
+ * @brief Compile-time checks to ensure
+ * that the program will run correctly
+ * on the target system
+*/
 #pragma once
 #include "Globals.h"
 

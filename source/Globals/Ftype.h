@@ -1,3 +1,9 @@
+/**
+ * @file Ftype.h
+ * @author Aaron Stanek
+ * @brief Defines ftype, FTYPE_PRECISION,
+ * FTYPE_EXPONENT_MIN, FTYPE_EXPONENT_MAX
+*/
 #pragma once
 
 #include <float.h>

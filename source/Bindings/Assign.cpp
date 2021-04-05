@@ -1,3 +1,7 @@
+/**
+ * @file Assign.cpp
+ * @author Aaron Stanek
+*/
 #include "Bindings.h"
 #include "../ManyType/ManyType.h"
 #include "../Symbols/Symbols.h"

@@ -1,3 +1,7 @@
+/**
+ * @file ManyType.cpp
+ * @author Aaron Stanek
+*/
 #include "ManyType.h"
 
 ManyType::ManyType(const ManyType& other) noexcept {

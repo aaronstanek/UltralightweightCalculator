@@ -1,3 +1,7 @@
+/**
+ * @file Symbols.cpp
+ * @author Aaron Stanek
+*/
 #include "Symbols.h"
 
 std::unordered_map< std::string, std::vector<char> > overloadsTable;

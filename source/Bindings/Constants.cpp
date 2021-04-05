@@ -1,3 +1,7 @@
+/**
+ * @file Constants.cpp
+ * @author Aaron Stanek
+*/
 #include "Bindings.h"
 #include "../Symbols/Symbols.h"
 #include "../ManyType/ManyType.h"

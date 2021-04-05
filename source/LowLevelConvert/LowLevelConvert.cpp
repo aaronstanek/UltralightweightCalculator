@@ -1,3 +1,7 @@
+/**
+ * @file LowLevelConvert.cpp
+ * @author Aaron Stanek
+*/
 #include "LowLevelConvert.h"
 
 unsigned long convertSignedToUnsigned(const long x) noexcept {

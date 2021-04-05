@@ -1,3 +1,7 @@
+/**
+ * @file LoadUserSymbol.cpp
+ * @author Aaron Stanek
+*/
 #include "LoadUserSymbol.h"
 #include "../LowLevelConvert/LowLevelConvert.h"
 #include <unordered_map>
