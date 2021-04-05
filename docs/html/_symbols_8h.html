@@ -122,6 +122,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>A type suitable to reference all of the language built-in functions. The first argument is the return value. The second, a vector of [function_name,args...]. The last is how many layer of recursion to allow in the computation. </p>
 
 </div>
 </div>
@@ -141,8 +142,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const&#160;</td>
-          <td class="paramname"><em>boundFunction</em>, </td>
+          <td class="paramtype">const <a class="el" href="_symbols_8h.html#a47e774e764b59747063f6b31e2506b84">boundFunction</a>&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -163,6 +164,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Loads a language built-in function into the symbol table. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">baseName</td><td>the name of the symbol to be created </td></tr>
+    <tr><td class="paramname">func</td><td>a pointer to the implementation of the language built-in function </td></tr>
+    <tr><td class="paramname">argCount</td><td>the number of arguments accepted by the built-in function </td></tr>
+    <tr><td class="paramname">delayMask</td><td>the delayMask of the language built-in function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_symbol_table_element.html">SymbolTableElement</a> </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>does not check for name conflicts, may result in undefined behavior if the specific overload already exists </dd></dl>
 
 </div>
 </div>
@@ -203,6 +215,24 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Loads a user-defined symbol into the symbol table. Overwrites if the specific user-defined overload already exists. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">baseName</td><td>the name of the symbol to be created </td></tr>
+    <tr><td class="paramname">mt</td><td>the definition of the symbol, must conform to symbolTable structure </td></tr>
+    <tr><td class="paramname">argCount</td><td>the number of arguments accepted by the user-defined symbol </td></tr>
+    <tr><td class="paramname">delayMask</td><td>the delayMask of the user-defined symbol </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_symbols_8cpp.html#a36904a0048765d2c7ddda97df745fa18">symbolTable</a> </dd>
+<dd>
+<a class="el" href="struct_symbol_table_element.html">SymbolTableElement</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="struct_user_alert.html">UserAlert</a></td><td>if the specific overload is a built-in symbol </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -231,6 +261,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Returns a reference to the <a class="el" href="struct_symbol_table_element.html">SymbolTableElement</a> corresponding to the given baseName and argCount. May return n-match if an exact match is not present. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">baseName</td><td>the baseName to look up </td></tr>
+    <tr><td class="paramname">argCount</td><td>the number of arguments of the desired function / variable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to a value in symbolTable. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="struct_user_alert.html">UserAlert</a></td><td>if there is no match </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -259,6 +303,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Removes a user-defined overload from the symbol table. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">baseName</td><td>the name of the symbol to be removed </td></tr>
+    <tr><td class="paramname">argCount</td><td>the number of arguments accepted by the user-defined symbol </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the overload was deleted, false otherwise </dd></dl>
 
 </div>
 </div>
@@ -287,6 +339,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Generates a list of overloads that can be removed for a given symbol name. If no user-defined overloads exist, then the list will be empty. Appends the list to vec. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">baseName</td><td>the baseName to look up </td></tr>
+    <tr><td class="paramname">vec</td><td>a vector onto which the result list will be appended in-place the values will have the same form as in overloadsTable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_symbols_8cpp.html#a1df25e247f4e4de01a4227e14296a14f">overloadsTable</a> </dd></dl>
 
 </div>
 </div>

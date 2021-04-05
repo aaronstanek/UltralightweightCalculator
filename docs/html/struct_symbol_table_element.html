@@ -78,18 +78,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad68de17f762c161f1418b966267bdd2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_symbol_table_element.html#ad68de17f762c161f1418b966267bdd2b">setAsUserSymbol</a> () noexcept</td></tr>
 <tr class="separator:ad68de17f762c161f1418b966267bdd2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1ad8bed4923c9dcac7b0062cf1c3eaf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_symbol_table_element.html#ac1ad8bed4923c9dcac7b0062cf1c3eaf">~SymbolTableElement</a> () noexcept</td></tr>
+<tr class="memdesc:ac1ad8bed4923c9dcac7b0062cf1c3eaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">If builtIn is false, it will call value.mt.~ManyType()  <a href="struct_symbol_table_element.html#ac1ad8bed4923c9dcac7b0062cf1c3eaf">More...</a><br /></td></tr>
 <tr class="separator:ac1ad8bed4923c9dcac7b0062cf1c3eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a2b65fee4cf1fceeeba6ca12a0785b6ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="union_symbol_table_element_union.html">SymbolTableElementUnion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_symbol_table_element.html#a2b65fee4cf1fceeeba6ca12a0785b6ea">value</a></td></tr>
+<tr class="memdesc:a2b65fee4cf1fceeeba6ca12a0785b6ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value held by this element.  <a href="struct_symbol_table_element.html#a2b65fee4cf1fceeeba6ca12a0785b6ea">More...</a><br /></td></tr>
 <tr class="separator:a2b65fee4cf1fceeeba6ca12a0785b6ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2bcaea1b1b95df2402397aad33bbe48"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_symbol_table_element.html#ab2bcaea1b1b95df2402397aad33bbe48">delayMask</a></td></tr>
 <tr class="separator:ab2bcaea1b1b95df2402397aad33bbe48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1086c41f7e990e9cb8d5a4e7ca22fc9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_symbol_table_element.html#ac1086c41f7e990e9cb8d5a4e7ca22fc9">builtIn</a></td></tr>
 <tr class="separator:ac1086c41f7e990e9cb8d5a4e7ca22fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The value type of the table of symbols. Uses <a class="el" href="union_symbol_table_element_union.html">SymbolTableElementUnion</a> to hold either a pointer to a built-in function, or a user-defined <a class="el" href="class_many_type.html">ManyType</a> object. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a04cddb6986241a531d7b820c7dbc7b1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a04cddb6986241a531d7b820c7dbc7b1f">&#9670;&nbsp;</a></span>SymbolTableElement()</h2>
 
@@ -112,6 +116,7 @@ Data Fields</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Default constructor. Sets builtIn to true, but does not define value.func </p><dl class="section warning"><dt>Warning</dt><dd>the caller must either define value.func or call <a class="el" href="struct_symbol_table_element.html#ad68de17f762c161f1418b966267bdd2b">setAsUserSymbol()</a> </dd></dl>
 
 </div>
 </div>
@@ -138,6 +143,8 @@ Data Fields</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>If builtIn is false, it will call value.mt.~ManyType() </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -163,6 +170,9 @@ Data Fields</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Sets builtIn to false. Default constructs value.mt in-place. </p><dl class="section warning"><dt>Warning</dt><dd>Calling more than once on a given object may result in a memory leak. </dd>
+<dd>
+Attempting to access value.mt without first calling this method may result in undefined behavior. </dd></dl>
 
 </div>
 </div>
@@ -178,6 +188,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Indicates if this object holds a pointer to a language built-in symbol. If true, value.func is defined. If false, value.mt is defined. </p>
 
 </div>
 </div>
@@ -192,6 +203,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>The nth bit (from LSB) marks if the nth argument should be left unevaulated when passed to the relevant function. Note that the function name DOES NOT COUNT as the first argument. </p>
 
 </div>
 </div>
@@ -206,6 +218,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The value held by this element. </p>
 
 </div>
 </div>

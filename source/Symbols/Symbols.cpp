@@ -4,47 +4,50 @@
 */
 #include "Symbols.h"
 
+/// A table to record all the overloads of all defined language symbols.
+/// The vector<char> represents a set of overloads of a given basename.
+/// Values >=0 are for user symbols,
+/// the value itself gives the number of arguments.
+/// -1 is for n-matched symbols.
+/// Values <=-2 are for built-in symbols,
+/// -(value+2) gives the number of arguments
+/// for a built-in symbol.
 std::unordered_map< std::string, std::vector<char> > overloadsTable;
-// can only be accessed from within this file
 
-// the char for each entry are the overloads,
-// values >=0 are for user symbols
-// -1 is for n match symbols
-// values <=-2 are for built-in symbols
-// -(value+2) for the number of arguments
-
+/// Sets builtIn to false.
+/// Default constructs value.mt in-place.
+/// @warning Calling more than once on a given
+/// object may result in a memory leak.
+/// @warning Attempting to access value.mt without first
+/// calling this method may result in undefined behavior.
 void SymbolTableElement::setAsUserSymbol() noexcept {
     builtIn = false;
     new (&(value.mt)) ManyType();
-    // we call this before we store a ManyType
-    // object in value
-    // failure to call will cause problems
-    // calling multiple times may cause problems
-    // so don't do that
     // The ManyType constructor is noexcept
     // and the new isn't allocating any memory
     // so this function is also noexcept
 }
 
+/// If builtIn is false, it will call value.mt.~ManyType()
 SymbolTableElement::~SymbolTableElement() noexcept {
     if (!builtIn) {
         value.mt.~ManyType();
     }
-    // if we stored a ManyType, we will have to
-    // destruct it
-    // if we stored a function pointer, we do not
-    // need to destruct it
 }
 
+/// Records the values of all symbols.
+/// Keys have the form basename?argCount.
+/// Values are either a DataExpression
+/// or are a StructureVector of the form [expression,varnames...].
+/// The values can never be a StructureString.
 std::unordered_map< std::string, SymbolTableElement > symbolTable;
-// can only be accessed from within this file
-// keys have the form basename?argCount
-// values are either DataExpression
-// or are a StructureVector of the form [expression,varnames...]
-// the values can never be a StructureString
 
+/// Creates a string of the form baseName?argCount.
+/// @param exactName where the result will be placed
+/// @param baseName the basename of the symbol
+/// @param argCount the number of arguments in the desired overload.
+/// -1 for n-matched symbols.
 void createExactName(std::string& exactName, const std::string& baseName, const unsigned char argCount) {
-    // create a string of the form baseName?argCount
     exactName = baseName;
     exactName.push_back('?');
     if (argCount == -1) {
@@ -55,11 +58,23 @@ void createExactName(std::string& exactName, const std::string& baseName, const 
     }
 }
 
+/// Looks up a symbol.
+/// @param exactName the symbol name to look up, should be of the form baseName?argCount
+/// @return a pointer to the SymbolTableElement in the definition of the symbol, or nullptr
+/// if the symbol name is not defined
 SymbolTableElement* getElementFromSymbolTable(const std::string& exactName) noexcept {
     const auto it = symbolTable.find(exactName);
     return (it == symbolTable.end()) ? nullptr : &(it->second);
 }
 
+/// Loads a language built-in function into the symbol table.
+/// @param baseName the name of the symbol to be created
+/// @param func a pointer to the implementation of the language built-in function
+/// @param argCount the number of arguments accepted by the built-in function
+/// @param delayMask the delayMask of the language built-in function
+/// @see SymbolTableElement
+/// @warning does not check for name conflicts,
+/// may result in undefined behavior if the specific overload already exists
 void placeBuiltInSymbol(const std::string& baseName, const boundFunction func, const char argCount, const unsigned char delayMask) {
     // this happens at the start of the program
     // there shouldn't be any name conflicts
@@ -75,6 +90,15 @@ void placeBuiltInSymbol(const std::string& baseName, const boundFunction func, c
     elem.delayMask = delayMask;
 }
 
+/// Loads a user-defined symbol into the symbol table.
+/// Overwrites if the specific user-defined overload already exists.
+/// @param baseName the name of the symbol to be created
+/// @param mt the definition of the symbol, must conform to symbolTable structure
+/// @param argCount the number of arguments accepted by the user-defined symbol
+/// @param delayMask the delayMask of the user-defined symbol
+/// @see symbolTable
+/// @see SymbolTableElement
+/// @throw UserAlert if the specific overload is a built-in symbol
 void placeUserSymbol(const std::string& baseName, const ManyType& mt, const char argCount, const unsigned char delayMask) {
     // there might be a name conflict
     std::string exactName;
@@ -107,9 +131,11 @@ void placeUserSymbol(const std::string& baseName, const ManyType& mt, const char
     elem->value.mt = mt;
 }
 
+/// Removes a user-defined overload from the symbol table.
+/// @param baseName the name of the symbol to be removed
+/// @param argCount the number of arguments accepted by the user-defined symbol
+/// @return true if the overload was deleted, false otherwise
 bool removeUserSymbol(const std::string& baseName, const char argCount) {
-    // return true if successful delete
-    // return false otherwise
     std::string exactName;
     createExactName(exactName,baseName,argCount);
     // check if it exists and if we can delete it
@@ -149,9 +175,14 @@ bool removeUserSymbol(const std::string& baseName, const char argCount) {
     }
 }
 
+/// Generates a list of overloads that can be removed for a given symbol name.
+/// If no user-defined overloads exist, then the list will be empty.
+/// Appends the list to vec.
+/// @param baseName the baseName to look up
+/// @param vec a vector onto which the result list will be appended in-place
+/// the values will have the same form as in overloadsTable
+/// @see overloadsTable
 void removeUserSymbolList(const std::string& baseName, std::vector<char>& vec) {
-    // gets a list of all overloads of a given baseName that can be removed
-    // and places it in vec
     const auto it = overloadsTable.find(baseName);
     if (it != overloadsTable.end()) {
         // baseName is a key in overloadsTable
@@ -166,10 +197,14 @@ void removeUserSymbolList(const std::string& baseName, std::vector<char>& vec) {
     }
 }
 
+/// Returns a reference to the SymbolTableElement corresponding
+/// to the given baseName and argCount.
+/// May return n-match if an exact match is not present.
+/// @param baseName the baseName to look up
+/// @param argCount the number of arguments of the desired function / variable
+/// @return A reference to a value in symbolTable.
+/// @throw UserAlert if there is no match
 const SymbolTableElement& readSymbol(const std::string& baseName, const char argCount) {
-    // returns the SymbolTableElement corresponding to the given baseName
-    // and argCount
-    // may return n match if an exact match is not present
     std::string exactName;
     SymbolTableElement* elem;
     if (argCount >= 0) {

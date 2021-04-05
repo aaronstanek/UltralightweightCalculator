@@ -12,32 +12,55 @@
 
 #include <unordered_map>
 
+/// A type suitable to reference all of the language
+/// built-in functions.
+/// The first argument is the return value.
+/// The second, a vector of [function_name,args...].
+/// The last is how many layer of recursion to allow
+/// in the computation.
 typedef void (*boundFunction)(ManyType&,mtvec&,long);
-// the first argument is the return value
-// the second is a vector of [function_name,args...]
 
+/// A type to hold either a pointer to a language
+/// built-in function, or a user-defined ManyType object.
 union SymbolTableElementUnion {
+    /// A pointer to a language built-in function.
     boundFunction func;
+    /// A user-defined ManyType object.
+    /// @warning must be constructed before use.
+    /// @warning must be destructed before deletion.
     ManyType mt;
+    /// Trivial constructor.
+    /// @warning Does not construct a ManyType
+    /// object, even if we expect mt to be defined.
     inline SymbolTableElementUnion() noexcept {};
+    /// Trivial destructor.
+    /// @warning Does not call ManyType destructor,
+    /// even if mt is defined.
     inline ~SymbolTableElementUnion() noexcept {};
 };
 
+/// The value type of the table of symbols.
+/// Uses SymbolTableElementUnion to hold
+/// either a pointer to a built-in function,
+/// or a user-defined ManyType object.
 struct SymbolTableElement {
+    /// The value held by this element.
     SymbolTableElementUnion value;
+    /// The nth bit (from LSB) marks if the
+    /// nth argument should be left unevaulated when
+    /// passed to the relevant function.
+    /// Note that the function name DOES NOT COUNT as the first argument.
     unsigned char delayMask;
-    // the nth bit (from LSB) marks if the
-    // nth argument should be left unevaulated when
-    // placed into the function
-    // 0 for all user functions
-    // note that the function name DOES NOT COUNT as the first argument
+    /// Indicates if this object holds a pointer to a language built-in symbol.
+    /// If true, value.func is defined.
+    /// If false, value.mt is defined.
     bool builtIn;
-    // builtIn means that value holds a function pointer
-    // not builtIn means that value holds a ManyType
+    /// Default constructor.
+    /// Sets builtIn to true, but does not define value.func
+    /// @warning the caller must either define value.func
+    /// or call setAsUserSymbol()
     inline SymbolTableElement() noexcept {
         builtIn = true;
-        // this means that value is a function pointer
-        // with only trivial constructor and destructor
     };
     void setAsUserSymbol() noexcept;
     ~SymbolTableElement() noexcept;
