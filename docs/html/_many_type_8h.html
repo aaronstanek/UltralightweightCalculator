@@ -83,6 +83,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_many_type_union.html">ManyTypeUnion</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">stores one of: bool, long, ftype, string*, vector&lt;ManyType&gt;*  <a href="union_many_type_union.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_many_type.html">ManyType</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,20 +172,40 @@ Enumerations</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Identifies a datatype using a numeric value. The values are bitmask-compatible. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fac26f15e86e3de4c398a8273272aba034"></a>Bool&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa1686a6c336b71b36d77354cea19a8b52"></a>Int&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa42038b9111847b871265201497611468"></a>Ftype&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1faab8ad4b1b1cb085484fcb2024c045958"></a>DataString&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa9f48c21d46142cd8c9fbc6f3331b437c"></a>DataVector&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa1dba3c8c8dbddcb6fbe1ae228c0c1d14"></a>StructureString&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fad7ab3cadb9c27f485766640f9b54de78"></a>StructureVector&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa6c8b3865c355168cfaac0f3781fb57c7"></a>DataExpression&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa5f6e16f3127a0362fa26b0c913000e8d"></a>StructureExpression&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa27118326006d3829667a400ad23d5d98"></a>String&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa57dea6f5039281b7fee517fc43bf3110"></a>Vector&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa61cf8510205077b6f5491d38cd44c0f7"></a>Pointer&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"><p>language type none </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fac26f15e86e3de4c398a8273272aba034"></a>Bool&#160;</td><td class="fielddoc"><p>language type bool </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa1686a6c336b71b36d77354cea19a8b52"></a>Int&#160;</td><td class="fielddoc"><p>language type int </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa42038b9111847b871265201497611468"></a>Ftype&#160;</td><td class="fielddoc"><p>language type float </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1faab8ad4b1b1cb085484fcb2024c045958"></a>DataString&#160;</td><td class="fielddoc"><p>language type string </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa9f48c21d46142cd8c9fbc6f3331b437c"></a>DataVector&#160;</td><td class="fielddoc"><p>language types rowvec, colvec, matrix </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa1dba3c8c8dbddcb6fbe1ae228c0c1d14"></a>StructureString&#160;</td><td class="fielddoc"><p>symbol name </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fad7ab3cadb9c27f485766640f9b54de78"></a>StructureVector&#160;</td><td class="fielddoc"><p>function call </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa6c8b3865c355168cfaac0f3781fb57c7"></a>DataExpression&#160;</td><td class="fielddoc"><p>bitmask: none, bool, int, float, string, rowvec, colvec, matrix <br  />
+ types accessible to the user </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa5f6e16f3127a0362fa26b0c913000e8d"></a>StructureExpression&#160;</td><td class="fielddoc"><p>bitmask: symbol name, function call <br  />
+ types not accessible to the user </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa27118326006d3829667a400ad23d5d98"></a>String&#160;</td><td class="fielddoc"><p>bitmask: string, symbol name <br  />
+ types implemented with std::string </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa57dea6f5039281b7fee517fc43bf3110"></a>Vector&#160;</td><td class="fielddoc"><p>bitmask: rowvec, colvec, matrix, function call <br  />
+ types implemented with std::vector </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afcb5ddc16c98924b0c580c3450e3ad1fa61cf8510205077b6f5491d38cd44c0f7"></a>Pointer&#160;</td><td class="fielddoc"><p>bitmask: string, rowvec, colvec, matrix, symbol name, function call <br  />
+ types implemented with std::string or std::vector <br  />
+ indicates that a nontrivial destructor needs to be called upon deletion </p>
+</td></tr>
 </table>
 
 </div>

@@ -37,7 +37,7 @@ void evaluateExpression(ManyType& x, long recursionJuice) {
         // or variable to deal with
         if (x.type() == ManyTypeLabel::StructureString) {
             // wrap this in a function call
-            x.wrapStructureString();
+            x.wrapInVector();
         }
         // x must now be a vector / function call at this point
         mtvec& callVec = x.getStructureVector();

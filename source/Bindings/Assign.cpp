@@ -30,7 +30,7 @@ void arrow_implement(ManyType& ret, mtvec& arr, long recursionJuice) {
     // if arr[1] is a string, convert it to a function call
     if (arr[1].type() == ManyTypeLabel::StructureString) {
         // wrap it into a function-like
-        arr[1].wrapStructureString();
+        arr[1].wrapInVector();
     }
     ManyType name;
     ManyType callObject;

@@ -115,17 +115,21 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a74f611e3841a56daa1e52abed32a5a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16b9a5e7abca633a073eb33467ccd851"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_many_type.html#a16b9a5e7abca633a073eb33467ccd851">makeCopyFrom</a> (const <a class="el" href="class_many_type.html">ManyType</a> &amp;, long)</td></tr>
 <tr class="separator:a16b9a5e7abca633a073eb33467ccd851"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d9257a01c8071624eb0d674ce19d147"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_many_type.html#a1d9257a01c8071624eb0d674ce19d147">wrapStructureString</a> ()</td></tr>
-<tr class="separator:a1d9257a01c8071624eb0d674ce19d147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c011e30be567778ed769283ffca71d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_many_type.html#a4c011e30be567778ed769283ffca71d6">wrapInVector</a> ()</td></tr>
+<tr class="separator:a4c011e30be567778ed769283ffca71d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:adb459f4d02dc42d08ee19a6e5e979f81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_many_type_8h.html#afcb5ddc16c98924b0c580c3450e3ad1f">ManyTypeLabel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_many_type.html#adb459f4d02dc42d08ee19a6e5e979f81">label</a></td></tr>
+<tr class="memdesc:adb459f4d02dc42d08ee19a6e5e979f81"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the stored value.  <a href="class_many_type.html#adb459f4d02dc42d08ee19a6e5e979f81">More...</a><br /></td></tr>
 <tr class="separator:adb459f4d02dc42d08ee19a6e5e979f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cbe057f314a6cbb72e397b67f97f04a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="union_many_type_union.html">ManyTypeUnion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_many_type.html#a1cbe057f314a6cbb72e397b67f97f04a">value</a></td></tr>
+<tr class="memdesc:a1cbe057f314a6cbb72e397b67f97f04a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value stored by the object.  <a href="class_many_type.html#a1cbe057f314a6cbb72e397b67f97f04a">More...</a><br /></td></tr>
 <tr class="separator:a1cbe057f314a6cbb72e397b67f97f04a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Uses <a class="el" href="union_many_type_union.html" title="stores one of: bool, long, ftype, string*, vector&lt;ManyType&gt;*">ManyTypeUnion</a> to store a value. Uses ManyTypeLabel to identify the type of the stored value. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a374d6779f6d1dedeab70c05c6fcdb41b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a374d6779f6d1dedeab70c05c6fcdb41b">&#9670;&nbsp;</a></span>ManyType() <span class="overload">[1/2]</span></h2>
 
@@ -148,6 +152,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Default constructor. label is set to None. </p>
 
 </div>
 </div>
@@ -174,6 +179,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Raw copies the bytes from other. Then default constructs other </p><dl class="section warning"><dt>Warning</dt><dd>breaks const </dd></dl>
 
 </div>
 </div>
@@ -199,6 +205,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Checks the type stored by this object. Calls nontrivial destructors, if any. Can be called directly to ensure that the value field is writable without causing a memory leak. </p><dl class="section warning"><dt>Warning</dt><dd>This function does not change label. If being deleted, this does not matter. If called directly, the caller is responsible for updating label correctly. </dd></dl>
 
 </div>
 </div>
@@ -217,6 +224,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the boolean value stored in this object. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="struct_many_type_access_error.html">ManyTypeAccessError</a></td><td>if value is not boolean. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -234,6 +248,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>reference to the std::string stored by this object. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="struct_many_type_access_error.html">ManyTypeAccessError</a></td><td>if value is not DataString. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -251,6 +272,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>reference to the mtvec stored by this object. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="struct_many_type_access_error.html">ManyTypeAccessError</a></td><td>if value is not DataVector. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -268,6 +296,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the floating-point value stored in this object. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="struct_many_type_access_error.html">ManyTypeAccessError</a></td><td>if value is not floating-point. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -285,6 +320,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the integer value stored in this object. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="struct_many_type_access_error.html">ManyTypeAccessError</a></td><td>if value is not an integer. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -302,6 +344,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>reference to the std::string stored by this object. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="struct_many_type_access_error.html">ManyTypeAccessError</a></td><td>if value is not StructureString. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -319,6 +368,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>reference to the mtvec stored by this object. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="struct_many_type_access_error.html">ManyTypeAccessError</a></td><td>if value is not StructureVector. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -347,6 +403,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>The current contents of this object are deleted and replaced with a deep copy of another <a class="el" href="class_many_type.html">ManyType</a> object. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>the object to copy </td></tr>
+    <tr><td class="paramname">recursionJuice</td><td>how many layers of recursion may be used by this operation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>may result in undefined behavior if other is a reference to this object </dd></dl>
 
 </div>
 </div>
@@ -373,6 +437,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Raw swaps the bytes in this object and other. </p><dl class="section warning"><dt>Warning</dt><dd>breaks const </dd></dl>
 
 </div>
 </div>
@@ -399,6 +464,12 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Sets label to Bool. Stores a boolean value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the boolean value to be stored in this object. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -416,6 +487,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Creates std::string in this object, if not present. If the current value is DataString or StructureString, the value will be unchanged. Sets label to DataString. </p><dl class="section return"><dt>Returns</dt><dd>reference to the std::string stored by this object. </dd></dl>
 
 </div>
 </div>
@@ -433,6 +505,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Creates mtvec in this object, if not present. If the current value is DataVector or StructureVector, the value will be unchanged. Sets label to DataVector. </p><dl class="section return"><dt>Returns</dt><dd>reference to the mtvec stored by this object. </dd></dl>
 
 </div>
 </div>
@@ -459,6 +532,12 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Sets label to Float. Stores a floating-point value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the floating-point value to be stored in this object. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -485,6 +564,12 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Sets label to Int. Stores an integer value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the integer value to be stored in this object. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -510,6 +595,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Stores none in this object. Sets label to None. </p>
 
 </div>
 </div>
@@ -527,6 +613,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Creates std::string in this object, if not present. If the current value is DataString or StructureString, the value will be unchanged. Sets label to StructureString. </p><dl class="section return"><dt>Returns</dt><dd>reference to the std::string stored by this object. </dd></dl>
 
 </div>
 </div>
@@ -544,6 +631,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Creates mtvec in this object, if not present. If the current value is DataVector or StructureVector, the value will be unchanged. Sets label to StructureVector. </p><dl class="section return"><dt>Returns</dt><dd>reference to the mtvec stored by this object. </dd></dl>
 
 </div>
 </div>
@@ -569,23 +657,25 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the type of data stored by this object </dd></dl>
 
 </div>
 </div>
-<a id="a1d9257a01c8071624eb0d674ce19d147"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d9257a01c8071624eb0d674ce19d147">&#9670;&nbsp;</a></span>wrapStructureString()</h2>
+<a id="a4c011e30be567778ed769283ffca71d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c011e30be567778ed769283ffca71d6">&#9670;&nbsp;</a></span>wrapInVector()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ManyType::wrapStructureString </td>
+          <td class="memname">void ManyType::wrapInVector </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Creates a StructureVector. Shallow copies this object into the first and only element of that StructureVector. Updates the value of this object to be that StructureVector. Sets label to StructureVector. </p>
 
 </div>
 </div>
@@ -610,6 +700,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The type of the stored value. </p>
+
 </div>
 </div>
 <a id="a1cbe057f314a6cbb72e397b67f97f04a"></a>
@@ -631,6 +723,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The value stored by the object. </p>
 
 </div>
 </div>
