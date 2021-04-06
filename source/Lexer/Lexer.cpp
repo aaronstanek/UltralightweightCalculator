@@ -85,7 +85,6 @@ long lexBO(LexerToken* output, const char* input, long index) noexcept {
     int operatorLength = INVALID_INPUT;
     switch (input[index]) {
         case ',':
-        case '+':
         case '%':
         case '&':
         case '|':
@@ -97,9 +96,20 @@ long lexBO(LexerToken* output, const char* input, long index) noexcept {
         operatorLength = 1;
         break;
 
+        case '+':
+        if (input[index+1] == '*') {
+            // dot product
+            operatorLength = 2;
+        }
+        else {
+            // addition
+            operatorLength = 1;
+        }
+        break;
+
         case '-':
-        if (input[index+1] == '>') {
-            // arrow
+        if (input[index+1] == '>' || input[index+1] == '*') {
+            // arrow or cross product
             operatorLength = 2;
         }
         else {
@@ -120,8 +130,8 @@ long lexBO(LexerToken* output, const char* input, long index) noexcept {
         break;
 
         case '/':
-        if (input[index+1] == '/') {
-            // floor division
+        if (input[index+1] == '/' || input[index+1] == '*') {
+            // floor division or matrix multiplication
             operatorLength = 2;
         }
         else {
