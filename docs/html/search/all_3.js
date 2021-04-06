@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['canmultiply_21',['CanMultiply',['../_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9af4b53b594e16b037939a44c45d2aff71',1,'Lexer.cpp']]],
+  ['canmultiply_21',['CanMultiply',['../_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9af4b53b594e16b037939a44c45d2aff71',1,'Lexer.h']]],
   ['checkprocessingtime_22',['checkProcessingTime',['../_globals_8cpp.html#aef2efe42d14852bf6f90ff2391d1dcd9',1,'checkProcessingTime():&#160;Globals.cpp'],['../_globals_8h.html#aef2efe42d14852bf6f90ff2391d1dcd9',1,'checkProcessingTime():&#160;Globals.cpp']]],
-  ['close_23',['Close',['../_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9ad3d2e617335f08df83599665eef8a418',1,'Lexer.cpp']]],
+  ['close_23',['Close',['../_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9ad3d2e617335f08df83599665eef8a418',1,'Lexer.h']]],
   ['computenumberofbits_24',['computeNumberOfBits',['../_constants_8cpp.html#ae513c7d843e5f373013d672c14ce6278',1,'Constants.cpp']]],
   ['constants_2ecpp_25',['Constants.cpp',['../_constants_8cpp.html',1,'']]],
   ['convert_2ecpp_26',['Convert.cpp',['../_convert_8cpp.html',1,'']]],

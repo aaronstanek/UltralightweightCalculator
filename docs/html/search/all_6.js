@@ -7,6 +7,6 @@ var searchData=
   ['ftype_48',['Ftype',['../union_many_type_union.html#ae79df9ca76d957496859c1431b8d4571',1,'ManyTypeUnion::Ftype()'],['../_many_type_8h.html#afcb5ddc16c98924b0c580c3450e3ad1fa42038b9111847b871265201497611468',1,'Ftype():&#160;ManyType.h']]],
   ['ftype_2eh_49',['Ftype.h',['../_ftype_8h.html',1,'']]],
   ['func_50',['func',['../union_symbol_table_element_union.html#a50c4ec9fd2c2d622e5787f185ebbc0b0',1,'SymbolTableElementUnion']]],
-  ['function_51',['Function',['../_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a86408593c34af77fdd90df932f8b5261',1,'Lexer.cpp']]],
-  ['functionmultiply_52',['FunctionMultiply',['../_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a71178edfa2898113438e5314fc57cf94',1,'Lexer.cpp']]]
+  ['function_51',['Function',['../_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9a86408593c34af77fdd90df932f8b5261',1,'Lexer.h']]],
+  ['functionmultiply_52',['FunctionMultiply',['../_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9a71178edfa2898113438e5314fc57cf94',1,'Lexer.h']]]
 ];

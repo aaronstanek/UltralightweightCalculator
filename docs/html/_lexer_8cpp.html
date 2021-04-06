@@ -66,8 +66,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Lexer.cpp File Reference</div>  </div>
@@ -75,140 +73,11 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_lexer_8h_source.html">Lexer.h</a>&quot;</code><br />
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:acde3442ff597933d5460bdf8a2a34a66"><td class="memItemLeft" align="right" valign="top">typedef unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_lexer_8cpp.html#acde3442ff597933d5460bdf8a2a34a66">LexerTokenInt</a></td></tr>
-<tr class="separator:acde3442ff597933d5460bdf8a2a34a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a9b30b609438be17f69e75c5d463d8be9"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> : LexerTokenInt { <br />
-&#160;&#160;<a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9af4b53b594e16b037939a44c45d2aff71">CanMultiply</a> = 0x80
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a281cb400814f18b0a153e4f02d51a2c9">IsMultiply</a> = 0x40
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9acf4b2d0f78964523b93231a1c8d93c39">EOI</a> = 0x01
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a25a81701fbfa4a1efdf660a950c1d006">White</a> = 0x02
-, <br />
-&#160;&#160;<a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9ab2ee912b91d69b435159c7c3f6df7f5f">Number</a> = CanMultiply | 0x01
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9ab0f9150da42188459345789713f99956">NumberMultiply</a> = Number | IsMultiply
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a02c86eb2792f3262c21d030a87e19793">Symbol</a> = CanMultiply | 0x02
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a252fed86f936030432f8d415d4f46641">SymbolMultiply</a> = Symbol | IsMultiply
-, <br />
-&#160;&#160;<a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a86408593c34af77fdd90df932f8b5261">Function</a> = CanMultiply | 0x04
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a71178edfa2898113438e5314fc57cf94">FunctionMultiply</a> = Function | IsMultiply
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9ac48e929b2b1eabba2ba036884433345e">Quote</a> = CanMultiply | 0x08
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a2f025c29fd9e45ab6160a68a25bdafc1">QuoteMultiply</a> = Quote | IsMultiply
-, <br />
-&#160;&#160;<a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9ac3bf447eabe632720a3aa1a7ce401274">Open</a> = CanMultiply | 0x10
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a7e7ee11f9a32ce496769489d62a9f71c">OpenMultiply</a> = Open | IsMultiply
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9ad3d2e617335f08df83599665eef8a418">Close</a> = 0x04
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9ae5b4afe96e1a4dab57c7251c20d1124f">UOB</a> = 0x08
-, <br />
-&#160;&#160;<a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a8547505b8d87242c04091e85404b4ecf">UOA</a> = 0x10
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a7b60a39fc2a49bbac1b3426abb5ada4b">BO</a> = 0x20
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9ad6b0e119a97c358b00ef27fd14c4539f">IgnoreMultiply</a> = 0x1F
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a7d679010567a3fb2b1bac67b5b2cc36d">IsSymbolLike</a> = 0x02 | 0x04
-, <br />
-&#160;&#160;<a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a514d8a494f087c0d549b9536c2ef3bd9">Terminal</a> = EOI | Close
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a90cccb8127f8aaee6ff274e01b433d27">Unitary</a> = UOB | UOA
-, <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9ae1b3ec89ead7f83a9245ed5c9cacfdbf">Operator</a> = Unitary | BO
-<br />
- }</td></tr>
-<tr class="separator:a9b30b609438be17f69e75c5d463d8be9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1284e5fc0d0ae83778870487949db347"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_lexer_8cpp.html#a1284e5fc0d0ae83778870487949db347">lexer</a> (std::vector&lt; <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> &gt; &amp;output, std::string &amp;input, long recursionJuice)</td></tr>
+<tr class="memitem:a1284e5fc0d0ae83778870487949db347"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_lexer_8cpp.html#a1284e5fc0d0ae83778870487949db347">lexer</a> (std::vector&lt; <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> &gt; &amp;output, std::string &amp;input, long recursionJuice)</td></tr>
 <tr class="separator:a1284e5fc0d0ae83778870487949db347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="acde3442ff597933d5460bdf8a2a34a66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acde3442ff597933d5460bdf8a2a34a66">&#9670;&nbsp;</a></span>LexerTokenInt</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef unsigned char <a class="el" href="_lexer_8cpp.html#acde3442ff597933d5460bdf8a2a34a66">LexerTokenInt</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a9b30b609438be17f69e75c5d463d8be9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b30b609438be17f69e75c5d463d8be9">&#9670;&nbsp;</a></span>LexerToken</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> : <a class="el" href="_lexer_8cpp.html#acde3442ff597933d5460bdf8a2a34a66">LexerTokenInt</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Identifies the lexical classification of an input character. The values are bitmask-compatible. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9af4b53b594e16b037939a44c45d2aff71"></a>CanMultiply&#160;</td><td class="fielddoc"><p>bitmask: Checks if token can have Multiply suffix. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a281cb400814f18b0a153e4f02d51a2c9"></a>IsMultiply&#160;</td><td class="fielddoc"><p>bitmask: Checks if token has multiply suffix. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9acf4b2d0f78964523b93231a1c8d93c39"></a>EOI&#160;</td><td class="fielddoc"><p>End Of Input. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a25a81701fbfa4a1efdf660a950c1d006"></a>White&#160;</td><td class="fielddoc"><p>Whitespace. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9ab2ee912b91d69b435159c7c3f6df7f5f"></a>Number&#160;</td><td class="fielddoc"><p>Number. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9ab0f9150da42188459345789713f99956"></a>NumberMultiply&#160;</td><td class="fielddoc"><p>Number preceded by implicit multiplication. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a02c86eb2792f3262c21d030a87e19793"></a>Symbol&#160;</td><td class="fielddoc"><p>Symbol. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a252fed86f936030432f8d415d4f46641"></a>SymbolMultiply&#160;</td><td class="fielddoc"><p>Symbol preceded by implicit multiplication. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a86408593c34af77fdd90df932f8b5261"></a>Function&#160;</td><td class="fielddoc"><p>Symbol followed by (. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a71178edfa2898113438e5314fc57cf94"></a>FunctionMultiply&#160;</td><td class="fielddoc"><p>Function preceded by implicit multiplication. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9ac48e929b2b1eabba2ba036884433345e"></a>Quote&#160;</td><td class="fielddoc"><p>Quote. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a2f025c29fd9e45ab6160a68a25bdafc1"></a>QuoteMultiply&#160;</td><td class="fielddoc"><p>Quote preceded by implicit multiplication. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9ac3bf447eabe632720a3aa1a7ce401274"></a>Open&#160;</td><td class="fielddoc"><p>( or [ or .[ </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a7e7ee11f9a32ce496769489d62a9f71c"></a>OpenMultiply&#160;</td><td class="fielddoc"><p>Open preceded by implicit multiplication. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9ad3d2e617335f08df83599665eef8a418"></a>Close&#160;</td><td class="fielddoc"><p>) or ] </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9ae5b4afe96e1a4dab57c7251c20d1124f"></a>UOB&#160;</td><td class="fielddoc"><p>Unitary Operator Before expression. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a8547505b8d87242c04091e85404b4ecf"></a>UOA&#160;</td><td class="fielddoc"><p>Unitary Operator After expression. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a7b60a39fc2a49bbac1b3426abb5ada4b"></a>BO&#160;</td><td class="fielddoc"><p>Binary Operator. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9ad6b0e119a97c358b00ef27fd14c4539f"></a>IgnoreMultiply&#160;</td><td class="fielddoc"><p>bitmask: can be used compare values without considering the IsMultiply bit.<br  />
- e.g. x &amp; IgnoreMultiply == Number<br  />
- This will check if x is a Number or NumberMultiply. This mask is only valid if the CanMultiply bit is 1. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a7d679010567a3fb2b1bac67b5b2cc36d"></a>IsSymbolLike&#160;</td><td class="fielddoc"><p>bitmask: Symbol, SymbolMultiply, Function, FunctionMultiply. This mask is only valid if the CanMultiply bit is 1. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a514d8a494f087c0d549b9536c2ef3bd9"></a>Terminal&#160;</td><td class="fielddoc"><p>bitmask: EOI or Close. This mask is only valid if the CanMultiply bit is 0. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a90cccb8127f8aaee6ff274e01b433d27"></a>Unitary&#160;</td><td class="fielddoc"><p>bitmask: UOB or UOA. This mask is only valid if the CanMultiply bit is 0. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9ae1b3ec89ead7f83a9245ed5c9cacfdbf"></a>Operator&#160;</td><td class="fielddoc"><p>bitmask UOB, UOA, BO. This mask is only valid if the CanMultiply bit is 0. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a1284e5fc0d0ae83778870487949db347"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1284e5fc0d0ae83778870487949db347">&#9670;&nbsp;</a></span>lexer()</h2>
@@ -219,7 +88,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void lexer </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>output</em>, </td>
         </tr>
         <tr>
