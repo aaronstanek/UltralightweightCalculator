@@ -52,13 +52,26 @@ long lexUOB(LexerToken* output, const char* input, long index) noexcept {
 /// @return the index after the last unitary operator marked
 long lexUOA(LexerToken* output, const char* input, long index) noexcept {
     while (input[index] == '!') {
-        // assume good
         if (input[index+1] == '=') {
-            // assume bad
+            // it is != or !==
             if (input[index+2] != '=') {
-                // it is bad
+                // it !=
+                // which is a binary operator
                 break;
             }
+            // it is !==
+            // which is UOA BO
+        }
+        else if (input[index+1] == '~') {
+            if (input[index+2] == '=') {
+                // it is !~=
+                // which is a binary operator
+                break;
+            }
+            // it is !~
+            // which is UOA UOB/BO
+            // UOB wouldn't be gramatical, but we
+            // don't have to check that here
         }
         // either index+1 is not =
         // which means that this is UOA
