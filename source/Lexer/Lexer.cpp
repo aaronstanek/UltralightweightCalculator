@@ -34,7 +34,7 @@ long lexWhite(LexerToken* output, const char* input, long index) noexcept {
 /// @return the index after the last unitary operator marked
 long lexUOB(LexerToken* output, const char* input, long index) noexcept {
     while (input[index] == '+' || input[index] == '-' ||
-        input[index] == '~' || input[index] == '!') {
+        input[index] == '~' || input[index] == '!' || input[index] == '^') {
             output[index] = LexerToken::UOB;
             ++index;
         }
