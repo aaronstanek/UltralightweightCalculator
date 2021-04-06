@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['writetobuiltinsymbol_413',['WriteToBuiltInSymbol',['../_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa0672fff0b8a55567f4c8fc02a020c470',1,'Globals.h']]],
-  ['wrongnumberofarguments_414',['WrongNumberOfArguments',['../_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaab8d0225dd5541d21fbf8c1124271272f',1,'Globals.h']]]
+  ['vector_375',['Vector',['../_many_type_8h.html#afcb5ddc16c98924b0c580c3450e3ad1fa57dea6f5039281b7fee517fc43bf3110',1,'ManyType.h']]]
 ];

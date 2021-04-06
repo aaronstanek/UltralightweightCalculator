@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['mask_5fallowunitaryafter_376',['Mask_AllowUnitaryAfter',['../_lexer_8h.html#aee5a9f6add4ccfd38af01611f126ed75a23c13881a776c4414676961385f38f7d',1,'Lexer.h']]],
-  ['mask_5fbinaryoperator_377',['Mask_BinaryOperator',['../_lexer_8h.html#aee5a9f6add4ccfd38af01611f126ed75a4be0e79ecbb9cac0e5cedff8321463bb',1,'Lexer.h']]],
-  ['mask_5finquote_378',['Mask_InQuote',['../_lexer_8h.html#aee5a9f6add4ccfd38af01611f126ed75a47b761d0c68a8181954dab9771d13a3c',1,'Lexer.h']]],
-  ['mask_5foperator_379',['Mask_Operator',['../_lexer_8h.html#aee5a9f6add4ccfd38af01611f126ed75abfded4a00bea9cc0dbf4eb0515ff336f',1,'Lexer.h']]],
-  ['mask_5fstartofexpression_380',['Mask_StartOfExpression',['../_lexer_8h.html#aee5a9f6add4ccfd38af01611f126ed75aad06f9617a3f45ccbd73122ce0547153',1,'Lexer.h']]],
-  ['maximumlogicalrecursiondepthreached_381',['MaximumLogicalRecursionDepthReached',['../_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa8d7d52f62108fb579b2fc596f9d321f3',1,'Globals.h']]],
-  ['maximumrecursiondepthreached_382',['MaximumRecursionDepthReached',['../_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa50176b2c1b22f986140b57163c7985f9',1,'Globals.h']]]
+  ['ignoremultiply_339',['IgnoreMultiply',['../_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9ad6b0e119a97c358b00ef27fd14c4539f',1,'Lexer.cpp']]],
+  ['infinityerror_340',['InfinityError',['../_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa82302aaa366db70dc445821b3d5f735b',1,'Globals.h']]],
+  ['inputtoolong_341',['InputTooLong',['../_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa7db9772c027c2721b882311b805a22e6',1,'Globals.h']]],
+  ['int_342',['Int',['../_many_type_8h.html#afcb5ddc16c98924b0c580c3450e3ad1fa1686a6c336b71b36d77354cea19a8b52',1,'ManyType.h']]],
+  ['invalidcharacter_343',['InvalidCharacter',['../_globals_8h.html#adfc62a31d9894b1fab1ef28ed6557caaa2de55882a40b70aee40d05cf973b0699',1,'Globals.h']]],
+  ['ismultiply_344',['IsMultiply',['../_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a281cb400814f18b0a153e4f02d51a2c9',1,'Lexer.cpp']]],
+  ['issymbollike_345',['IsSymbolLike',['../_lexer_8cpp.html#a9b30b609438be17f69e75c5d463d8be9a7d679010567a3fb2b1bac67b5b2cc36d',1,'Lexer.cpp']]]
 ];

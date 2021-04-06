@@ -5,3 +5,5 @@
 */
 #pragma once
 #include "../Globals/Globals.h"
+
+void lexer(std::vector<char>&, std::string&, long);
