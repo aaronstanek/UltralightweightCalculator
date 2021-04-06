@@ -30,7 +30,6 @@ enum class UserMessage: uint_fast8_t {
     StructureStringFormatError,
     // text processing
     InputTooLong,
-    InvalidCharacter,
     SyntaxError,
     // evaluation
     WriteToBuiltInSymbol,

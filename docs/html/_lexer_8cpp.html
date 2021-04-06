@@ -66,6 +66,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Lexer.cpp File Reference</div>  </div>
@@ -73,12 +74,107 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_lexer_8h_source.html">Lexer.h</a>&quot;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a26c344a75d9aded7bab57a5544d571fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_lexer_8cpp.html#a26c344a75d9aded7bab57a5544d571fc">EMPTY_INPUT</a>&#160;&#160;&#160;-1</td></tr>
+<tr class="separator:a26c344a75d9aded7bab57a5544d571fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d8df6fec341be5008a9291378327a59"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_lexer_8cpp.html#a1d8df6fec341be5008a9291378327a59">INVALID_INPUT</a>&#160;&#160;&#160;-2</td></tr>
+<tr class="separator:a1d8df6fec341be5008a9291378327a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aee8e1b50ac08184cb0c1b90484fd26b6"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_lexer_8cpp.html#aee8e1b50ac08184cb0c1b90484fd26b6">lexWhite</a> (<a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> *output, const char *input, long index) noexcept</td></tr>
+<tr class="separator:aee8e1b50ac08184cb0c1b90484fd26b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9efdfd325430525c8c980184e4d0e675"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_lexer_8cpp.html#a9efdfd325430525c8c980184e4d0e675">lexUOB</a> (<a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> *output, const char *input, long index) noexcept</td></tr>
+<tr class="separator:a9efdfd325430525c8c980184e4d0e675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41a24ef2f5ad29cbaae96a085fa80ad5"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_lexer_8cpp.html#a41a24ef2f5ad29cbaae96a085fa80ad5">lexUOA</a> (<a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> *output, const char *input, long index) noexcept</td></tr>
+<tr class="separator:a41a24ef2f5ad29cbaae96a085fa80ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f1aa6c5c2330c1b12c8100cc421ede7"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_lexer_8cpp.html#a0f1aa6c5c2330c1b12c8100cc421ede7">lexBO</a> (<a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> *output, const char *input, long index) noexcept</td></tr>
+<tr class="separator:a0f1aa6c5c2330c1b12c8100cc421ede7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1284e5fc0d0ae83778870487949db347"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_lexer_8cpp.html#a1284e5fc0d0ae83778870487949db347">lexer</a> (std::vector&lt; <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> &gt; &amp;output, std::string &amp;input, long recursionJuice)</td></tr>
 <tr class="separator:a1284e5fc0d0ae83778870487949db347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a26c344a75d9aded7bab57a5544d571fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c344a75d9aded7bab57a5544d571fc">&#9670;&nbsp;</a></span>EMPTY_INPUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EMPTY_INPUT&#160;&#160;&#160;-1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d8df6fec341be5008a9291378327a59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d8df6fec341be5008a9291378327a59">&#9670;&nbsp;</a></span>INVALID_INPUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INVALID_INPUT&#160;&#160;&#160;-2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a0f1aa6c5c2330c1b12c8100cc421ede7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f1aa6c5c2330c1b12c8100cc421ede7">&#9670;&nbsp;</a></span>lexBO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long lexBO </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Marks characters with <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9a7b60a39fc2a49bbac1b3426abb5ada4b" title="Binary Operator.">LexerToken::BO</a> until it reaches the end of a binary operator. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Where the output will go, the token output[i] will be the lexical value of input[i] </td></tr>
+    <tr><td class="paramname">input</td><td>Where the input comes from, there will be and end-of-line character at the end </td></tr>
+    <tr><td class="paramname">index</td><td>the suspected first index of the binary operator </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the index after the binary operator, or INVALID_INPUT if the input at index could not be interpreted as a valid binary operator. If INVALID_INPUT is returned, then output will not have been changed. </dd></dl>
+
+</div>
+</div>
 <a id="a1284e5fc0d0ae83778870487949db347"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1284e5fc0d0ae83778870487949db347">&#9670;&nbsp;</a></span>lexer()</h2>
 
@@ -113,11 +209,164 @@ Functions</h2></td></tr>
 <p>Assigns lexical meaning to each character of the user input. Checks for invalid characters and ensures that the input conforms to the language grammar. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">output</td><td>Where the output will go, will have the same length as input, with 1-to-1 correspondence in the indicies </td></tr>
-    <tr><td class="paramname">input</td><td>Where the input comes from, an end of line character will be appended to the end </td></tr>
+    <tr><td class="paramname">input</td><td>Where the input comes from, an end-of-line character will be appended to the end </td></tr>
     <tr><td class="paramname">recursionJuice</td><td>how many layers of recursion may be used by this operation </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a41a24ef2f5ad29cbaae96a085fa80ad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41a24ef2f5ad29cbaae96a085fa80ad5">&#9670;&nbsp;</a></span>lexUOA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long lexUOA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Marks characters with <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9a8547505b8d87242c04091e85404b4ecf" title="Unitary Operator After expression.">LexerToken::UOA</a> until it hits a character that cannot be a unitary operator after expression. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Where the output will go, the token output[i] will be the lexical value of input[i] </td></tr>
+    <tr><td class="paramname">input</td><td>Where the input comes from, there will be and end-of-line character at the end </td></tr>
+    <tr><td class="paramname">index</td><td>where to begin the search for unitary operators after expression </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the index after the last unitary operator marked </dd></dl>
+
+</div>
+</div>
+<a id="a9efdfd325430525c8c980184e4d0e675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9efdfd325430525c8c980184e4d0e675">&#9670;&nbsp;</a></span>lexUOB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long lexUOB </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Marks characters with <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9ae5b4afe96e1a4dab57c7251c20d1124f" title="Unitary Operator Before expression.">LexerToken::UOB</a> until it hits a character that cannot be a unitary operator before expression. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Where the output will go, the token output[i] will be the lexical value of input[i] </td></tr>
+    <tr><td class="paramname">input</td><td>Where the input comes from, there will be and end-of-line character at the end </td></tr>
+    <tr><td class="paramname">index</td><td>where to begin the search for unitary operators before expression </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the index after the last unitary operator marked </dd></dl>
+
+</div>
+</div>
+<a id="aee8e1b50ac08184cb0c1b90484fd26b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee8e1b50ac08184cb0c1b90484fd26b6">&#9670;&nbsp;</a></span>lexWhite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long lexWhite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Marks characters with <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9a25a81701fbfa4a1efdf660a950c1d006" title="Whitespace.">LexerToken::White</a> until it hits a nonwhitespace character. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Where the output will go, the token output[i] will be the lexical value of input[i] </td></tr>
+    <tr><td class="paramname">input</td><td>Where the input comes from, there will be and end-of-line character at the end </td></tr>
+    <tr><td class="paramname">index</td><td>where to begin the search for whitespace characters </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the index after the last whitespace marked </dd></dl>
 
 </div>
 </div>

@@ -27,10 +27,6 @@ UserAlert::UserAlert(const UserMessage base, const char* const extra) {
         memo = "Input Too Long";
         break;
 
-        case UserMessage::InvalidCharacter:
-        memo = "Invalid Character";
-        break;
-
         case UserMessage::SyntaxError:
         memo = "Syntax Error";
         break;
