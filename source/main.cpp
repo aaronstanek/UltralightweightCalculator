@@ -12,7 +12,6 @@
 #include "LowLevelConvert/LowLevelConvert.h"
 #include "Bindings/Bindings.h"
 #include "Compute/EvaluateExpression.h"
-#include "Lexer/Lexer.h"
 
 #include "Globals/RNG.h"
 
@@ -36,13 +35,6 @@ int main() {
                 // get input
                 std::cin >> inputString;
                 processingStartTime = time(NULL);
-                prepareInput(inputString);
-                std::vector<LexerToken> tokens;
-                lexInput(tokens,inputString);
-                for (long i = 0; i < tokens.size(); ++i) {
-                    std::cout << (int)tokens[i];
-                }
-                std::cout << std::endl;
             }
             catch (UserAlert& e) {
                 std::cout << e.message << std::endl;
