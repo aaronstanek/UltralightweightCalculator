@@ -105,6 +105,8 @@ Functions</h2></td></tr>
 <tr class="separator:a082eb9cd2d568ab314bd80409d6f3045"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47d55087cc0bb47c3d9125a50869d911"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_lexer_8cpp.html#a47d55087cc0bb47c3d9125a50869d911">lexExpressionSequence</a> (<a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> *output, const char *input, long recursionJuice, long index) noexcept</td></tr>
 <tr class="separator:a47d55087cc0bb47c3d9125a50869d911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83fc510e9bffcac58fb85bae8fad5e8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_lexer_8cpp.html#a83fc510e9bffcac58fb85bae8fad5e8d">reverseLex</a> (<a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> *output, const char *input, long index) noexcept</td></tr>
+<tr class="separator:a83fc510e9bffcac58fb85bae8fad5e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1284e5fc0d0ae83778870487949db347"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_lexer_8cpp.html#a1284e5fc0d0ae83778870487949db347">lexer</a> (std::vector&lt; <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> &gt; &amp;output, std::string &amp;input, long recursionJuice)</td></tr>
 <tr class="separator:a1284e5fc0d0ae83778870487949db347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -671,6 +673,56 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the index after the last whitespace marked </dd></dl>
+
+</div>
+</div>
+<a id="a83fc510e9bffcac58fb85bae8fad5e8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83fc510e9bffcac58fb85bae8fad5e8d">&#9670;&nbsp;</a></span>reverseLex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reverseLex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9">LexerToken</a> *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Iterates through input backwards. UOBs that can be attached to their arguments, are attached to their arguments. Symbols are promoted to functions where possible. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Where the output will go, the token output[i] will be the lexical value of input[i] </td></tr>
+    <tr><td class="paramname">input</td><td>Where the input comes from, there will be and end-of-line character at the end </td></tr>
+    <tr><td class="paramname">index</td><td>the last index of the input </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

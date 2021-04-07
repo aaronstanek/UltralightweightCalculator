@@ -6,7 +6,8 @@ var searchData=
   ['removeusersymbol_299',['removeUserSymbol',['../_symbols_8cpp.html#a4f9f95f0164037490de506521ff2a5c1',1,'removeUserSymbol(const std::string &amp;baseName, const char argCount):&#160;Symbols.cpp'],['../_symbols_8h.html#ac9270c61db28ec582d6c9f23b750e436',1,'removeUserSymbol(const std::string &amp;, const char):&#160;Symbols.cpp']]],
   ['removeusersymbollist_300',['removeUserSymbolList',['../_symbols_8cpp.html#a6f8dd628a6bc3148d682c9e6cc305185',1,'removeUserSymbolList(const std::string &amp;baseName, std::vector&lt; char &gt; &amp;vec):&#160;Symbols.cpp'],['../_symbols_8h.html#a61c5773e7f5fa642c0f060cd9305c4d9',1,'removeUserSymbolList(const std::string &amp;, std::vector&lt; char &gt; &amp;):&#160;Symbols.cpp']]],
   ['resolvelocalvaraiblenames_301',['resolveLocalVaraibleNames',['../_load_user_symbol_8cpp.html#af1fb0effe3f766da95879ba9eb2ce267',1,'LoadUserSymbol.cpp']]],
-  ['rng_5fgetint_302',['RNG_getInt',['../_r_n_g_8cpp.html#a2ab30f6dbb6767deefc4598af37b11c2',1,'RNG_getInt(const long minValue, const long maxValue) noexcept:&#160;RNG.cpp'],['../_r_n_g_8h.html#acaa2f27d5a21f04fa60727e50c294d0b',1,'RNG_getInt(const long, const long) noexcept:&#160;RNG.cpp']]],
-  ['rng_5fgetraw_303',['RNG_getRaw',['../_r_n_g_8cpp.html#afc0bc193e8b7a005b8cda87bfb09a006',1,'RNG_getRaw() noexcept:&#160;RNG.cpp'],['../_r_n_g_8h.html#afc0bc193e8b7a005b8cda87bfb09a006',1,'RNG_getRaw() noexcept:&#160;RNG.cpp']]],
-  ['rng_5fstate_5fstruct_304',['RNG_State_Struct',['../struct_r_n_g___state___struct.html#a95dc33736e71b56147fe2df01df0097b',1,'RNG_State_Struct']]]
+  ['reverselex_302',['reverseLex',['../_lexer_8cpp.html#a83fc510e9bffcac58fb85bae8fad5e8d',1,'Lexer.cpp']]],
+  ['rng_5fgetint_303',['RNG_getInt',['../_r_n_g_8cpp.html#a2ab30f6dbb6767deefc4598af37b11c2',1,'RNG_getInt(const long minValue, const long maxValue) noexcept:&#160;RNG.cpp'],['../_r_n_g_8h.html#acaa2f27d5a21f04fa60727e50c294d0b',1,'RNG_getInt(const long, const long) noexcept:&#160;RNG.cpp']]],
+  ['rng_5fgetraw_304',['RNG_getRaw',['../_r_n_g_8cpp.html#afc0bc193e8b7a005b8cda87bfb09a006',1,'RNG_getRaw() noexcept:&#160;RNG.cpp'],['../_r_n_g_8h.html#afc0bc193e8b7a005b8cda87bfb09a006',1,'RNG_getRaw() noexcept:&#160;RNG.cpp']]],
+  ['rng_5fstate_5fstruct_305',['RNG_State_Struct',['../struct_r_n_g___state___struct.html#a95dc33736e71b56147fe2df01df0097b',1,'RNG_State_Struct']]]
 ];

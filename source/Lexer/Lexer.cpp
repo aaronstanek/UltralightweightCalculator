@@ -425,7 +425,16 @@ long lexExpressionSequence(LexerToken* output, const char* input, long recursion
         // then whitespace
         index = lexWhite(output,input,index);
         // then UOB
-        index = lexUOB(output,input,index);
+        t = lexUOB(output,input,index);
+        if (implicitMultiply) {
+            if (t != index) {
+                // we have implicitMultiplication
+                // and UOB
+                output[index] = LexerToken::UOBMultiply;
+                implicitMultiply = false;
+            }
+        }
+        index = t;
         // then simple expression
         if (input[index] == '(' || input[index] == '[') {
             checkChar = (input[index] == '(') ? ')' : ']';
@@ -505,6 +514,73 @@ long lexExpressionSequence(LexerToken* output, const char* input, long recursion
     }
 }
 
+/// Iterates through input backwards.
+/// UOBs that can be attached to their arguments,
+/// are attached to their arguments.
+/// Symbols are promoted to functions where possible.
+/// @param output Where the output will go, the token
+/// output[i] will be the lexical value of input[i]
+/// @param input Where the input comes from, there will be
+/// and end-of-line character at the end
+/// @param index the last index of the input
+void reverseLex(LexerToken* output, const char* input, long index) noexcept {
+    bool checkForOpenPromotion = false;
+    bool checkForNumberPromotion = false;
+    bool checkForFunctionPromotion = 0;
+    for (; index >= 0; --index) {
+        if (checkForOpenPromotion) {
+            if (output[index] == LexerToken::UOB) {
+                if (input[index] == '^') {
+                    output[index] = LexerToken::Open;
+                }
+            }
+            checkForOpenPromotion = false;
+        }
+        if (output[index] == LexerToken::Open) {
+            checkForOpenPromotion = true;
+        }
+        if (output[index] == LexerToken::Number) {
+            checkForNumberPromotion = true;
+        }
+        else if (checkForNumberPromotion) {
+            if (output[index] == LexerToken::UOB) {
+                output[index] = LexerToken::Number;
+            }
+            else if (output[index] == LexerToken::UOBMultiply) {
+                output[index] = LexerToken::NumberMultiply;
+            }
+            else {
+                checkForNumberPromotion = false;
+            }
+        }
+        if (output[index] == LexerToken::OpenMultiply) {
+            checkForFunctionPromotion = true;
+        }
+        else if (checkForFunctionPromotion) {
+            // checkForFunctionPromotion = 1
+            // means that we look for a symbol
+            // checkForFunctionPromotion = 2
+            // means that we are iterating over the symbol
+            if (output[index] == LexerToken::White) {
+                if (checkForFunctionPromotion == 2) {
+                    checkForFunctionPromotion = 0;
+                }
+            }
+            else if (output[index] == LexerToken::Symbol) {
+                checkForFunctionPromotion = 2;
+                output[index] = LexerToken::Function;
+            }
+            else if (output[index] == LexerToken::SymbolMultiply) {
+                checkForFunctionPromotion = 2;
+                output[index] = LexerToken::FunctionMultiply;
+            }
+            else {
+                checkForFunctionPromotion = 0;
+            }
+        }
+    }
+}
+
 /// Assigns lexical meaning to each character
 /// of the user input. Checks for invalid characters
 /// and ensures that the input conforms to the language grammar.
@@ -520,9 +596,17 @@ void lexer(std::vector<LexerToken>& output, std::string& input, long recursionJu
     // the last character is END_OF_LINE
     // output has size > 0
     long index = 0;
-    // call REX
-    // index = REX(index)
-    if (index < 0) {
+    index = lexExpressionSequence(&output[0],input.c_str(),recursionJuice,index);
+    if (index == REACHED_RECURSION_LIMIT) {
+        throw UserAlert(UserMessage::MaximumRecursionDepthReached,nullptr);
+    }
+    if (index < 0 || index+1 != input.size()) {
         throw UserAlert(UserMessage::SyntaxError,nullptr);
     }
+    // index is the last index of input
+    output[index] = LexerToken::EOI;
+    // we lexed correctly
+    // now attach unitary operators before
+    // and create functions
+    reverseLex(&output[0],input.c_str(),index);
 }

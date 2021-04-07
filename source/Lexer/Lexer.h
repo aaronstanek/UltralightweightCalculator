@@ -42,32 +42,28 @@ enum class LexerToken : LexerTokenInt {
     Open = CanMultiply | 0x10,
     /// Open preceded by implicit multiplication
     OpenMultiply = Open | IsMultiply,
+    /// Unitary Operator Before expression
+    UOB = CanMultiply | 0x20,
+    /// UOB preceded by implicit multiplication
+    UOBMultiply = UOB | IsMultiply,
     /// ) or ]
     Close = 0x04,
-    /// Unitary Operator Before expression
-    UOB = 0x08,
     /// Unitary Operator After expression
-    UOA = 0x10,
+    UOA = 0x08,
     /// Binary Operator
-    BO = 0x20,
+    BO = 0x10,
     /// bitmask: can be used compare values without considering
     /// the IsMultiply bit.\n
     /// e.g. x & IgnoreMultiply == Number\n
     /// This will check if x is a Number or NumberMultiply.
     /// This mask is only valid if the CanMultiply bit is 1.
-    IgnoreMultiply = 0x1F,
+    IgnoreMultiply = 0x3F,
     /// bitmask: Symbol, SymbolMultiply, Function, FunctionMultiply.
     /// This mask is only valid if the CanMultiply bit is 1.
     IsSymbolLike = 0x02 | 0x04,
     /// bitmask: EOI or Close.
     /// This mask is only valid if the CanMultiply bit is 0.
-    Terminal = EOI | Close,
-    /// bitmask: UOB or UOA.
-    /// This mask is only valid if the CanMultiply bit is 0.
-    Unitary = UOB | UOA,
-    /// bitmask UOB, UOA, BO.
-    /// This mask is only valid if the CanMultiply bit is 0.
-    Operator = Unitary | BO
+    Terminal = EOI | Close
 };
 
 void lexer(std::vector<LexerToken>&, std::string&, long);

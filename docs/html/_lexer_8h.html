@@ -105,17 +105,16 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9ac3bf447eabe632720a3aa1a7ce401274">Open</a> = CanMultiply | 0x10
 , <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9a7e7ee11f9a32ce496769489d62a9f71c">OpenMultiply</a> = Open | IsMultiply
-, <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9ad3d2e617335f08df83599665eef8a418">Close</a> = 0x04
-, <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9ae5b4afe96e1a4dab57c7251c20d1124f">UOB</a> = 0x08
+, <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9ae5b4afe96e1a4dab57c7251c20d1124f">UOB</a> = CanMultiply | 0x20
+, <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9a6cc928d6a3b4832866293d07ad772d8f">UOBMultiply</a> = UOB | IsMultiply
 , <br />
-&#160;&#160;<a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9a8547505b8d87242c04091e85404b4ecf">UOA</a> = 0x10
-, <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9a7b60a39fc2a49bbac1b3426abb5ada4b">BO</a> = 0x20
-, <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9ad6b0e119a97c358b00ef27fd14c4539f">IgnoreMultiply</a> = 0x1F
-, <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9a7d679010567a3fb2b1bac67b5b2cc36d">IsSymbolLike</a> = 0x02 | 0x04
+&#160;&#160;<a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9ad3d2e617335f08df83599665eef8a418">Close</a> = 0x04
+, <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9a8547505b8d87242c04091e85404b4ecf">UOA</a> = 0x08
+, <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9a7b60a39fc2a49bbac1b3426abb5ada4b">BO</a> = 0x10
+, <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9ad6b0e119a97c358b00ef27fd14c4539f">IgnoreMultiply</a> = 0x3F
 , <br />
-&#160;&#160;<a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9a514d8a494f087c0d549b9536c2ef3bd9">Terminal</a> = EOI | Close
-, <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9a90cccb8127f8aaee6ff274e01b433d27">Unitary</a> = UOB | UOA
-, <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9ae1b3ec89ead7f83a9245ed5c9cacfdbf">Operator</a> = Unitary | BO
+&#160;&#160;<a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9a7d679010567a3fb2b1bac67b5b2cc36d">IsSymbolLike</a> = 0x02 | 0x04
+, <a class="el" href="_lexer_8h.html#a9b30b609438be17f69e75c5d463d8be9a514d8a494f087c0d549b9536c2ef3bd9">Terminal</a> = EOI | Close
 <br />
  }</td></tr>
 <tr class="separator:a9b30b609438be17f69e75c5d463d8be9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,9 +192,11 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a7e7ee11f9a32ce496769489d62a9f71c"></a>OpenMultiply&#160;</td><td class="fielddoc"><p>Open preceded by implicit multiplication. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9ad3d2e617335f08df83599665eef8a418"></a>Close&#160;</td><td class="fielddoc"><p>) or ] </p>
-</td></tr>
 <tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9ae5b4afe96e1a4dab57c7251c20d1124f"></a>UOB&#160;</td><td class="fielddoc"><p>Unitary Operator Before expression. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a6cc928d6a3b4832866293d07ad772d8f"></a>UOBMultiply&#160;</td><td class="fielddoc"><p>UOB preceded by implicit multiplication. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9ad3d2e617335f08df83599665eef8a418"></a>Close&#160;</td><td class="fielddoc"><p>) or ] </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a8547505b8d87242c04091e85404b4ecf"></a>UOA&#160;</td><td class="fielddoc"><p>Unitary Operator After expression. </p>
 </td></tr>
@@ -208,10 +209,6 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a7d679010567a3fb2b1bac67b5b2cc36d"></a>IsSymbolLike&#160;</td><td class="fielddoc"><p>bitmask: Symbol, SymbolMultiply, Function, FunctionMultiply. This mask is only valid if the CanMultiply bit is 1. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a514d8a494f087c0d549b9536c2ef3bd9"></a>Terminal&#160;</td><td class="fielddoc"><p>bitmask: EOI or Close. This mask is only valid if the CanMultiply bit is 0. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9a90cccb8127f8aaee6ff274e01b433d27"></a>Unitary&#160;</td><td class="fielddoc"><p>bitmask: UOB or UOA. This mask is only valid if the CanMultiply bit is 0. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b30b609438be17f69e75c5d463d8be9ae1b3ec89ead7f83a9245ed5c9cacfdbf"></a>Operator&#160;</td><td class="fielddoc"><p>bitmask UOB, UOA, BO. This mask is only valid if the CanMultiply bit is 0. </p>
 </td></tr>
 </table>
 
