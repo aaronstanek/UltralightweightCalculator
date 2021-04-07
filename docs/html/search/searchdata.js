@@ -8,7 +8,7 @@ var indexSectionsWithContent =
   5: "blm",
   6: "lmu",
   7: "bcdefimnopqstuvw",
-  8: "_eim"
+  8: "_eimr"
 };
 
 var indexSectionNames =
