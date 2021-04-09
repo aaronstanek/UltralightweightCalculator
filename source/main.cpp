@@ -103,6 +103,10 @@ int main() {
         test_lexer("apple (x,   %m)->x + %m(x)");
         test_lexer("124231.321e3pat");
         test_lexer("124231.321e-pat");
+        test_lexer("apple314");
+        test_lexer("appl%e314");
+        test_lexer("appl%%e314");
+        test_lexer("5 ()");
 
     }
     catch (ManyTypeAccessError& e) {
