@@ -20,7 +20,7 @@ void evaluateExpression(ManyType& x, long recursionJuice) {
     while (true) {
         // cycle this loop until we have
         // a valid DataExpression
-        if (static_cast<ManyTypeLabelInt>(x.type()) & static_cast<ManyTypeLabelInt>(ManyTypeLabel::DataExpression)) {
+        if ((ManyTypeLabelInt)(x.type()) & (ManyTypeLabelInt)(ManyTypeLabel::DataExpression)) {
             // we are done
             return;
         }

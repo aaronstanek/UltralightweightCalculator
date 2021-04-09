@@ -24,7 +24,7 @@ static_assert( FLT_RADIX == 2 , "floating point types must use radix 2" );
 
 #define MIN_TIME_BITS (0x7FFFFF)
 
-static_assert( static_cast<unsigned long>( static_cast<time_t>(MIN_TIME_BITS) ) == static_cast<unsigned long>(MIN_TIME_BITS) , "time_t must hold at least 23 bits of precision" );
+static_assert( (unsigned long)( (time_t)(MIN_TIME_BITS) ) == (unsigned long)(MIN_TIME_BITS) , "time_t must hold at least 23 bits of precision" );
 
 // if time_t is a too-small integer, then the left side will
 // be truncated, causing the assert to fail

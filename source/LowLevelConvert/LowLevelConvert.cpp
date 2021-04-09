@@ -141,7 +141,7 @@ void convertToFtype(ManyType& x) {
 /// @throw UserAlert if the value of x cannot be converted
 /// to a syntactically correct StructureString
 void convertToStructureString(ManyType& x) {
-    if (static_cast<ManyTypeLabelInt>(x.type()) & ~static_cast<ManyTypeLabelInt>(ManyTypeLabel::String)) {
+    if ((ManyTypeLabelInt)(x.type()) & ~(ManyTypeLabelInt)(ManyTypeLabel::String)) {
         throw UserAlert(UserMessage::StructureStringFormatError,"Not a String");
     }
     if (x.type() == ManyTypeLabel::StructureString) {

@@ -44,7 +44,7 @@ void resolveLocalVaraibleNames(ManyType& x, std::unordered_map<std::string,const
                 continue;
             }
         }
-        else if (static_cast<ManyTypeLabelInt>(x.type()) & static_cast<ManyTypeLabelInt>(ManyTypeLabel::Vector)) {
+        else if ((ManyTypeLabelInt)(x.type()) & (ManyTypeLabelInt)(ManyTypeLabel::Vector)) {
             checkProcessingTime();
             // it's a Vector
             // forward the processing to all children resursively

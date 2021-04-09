@@ -25,8 +25,8 @@ ManyType::ManyType(const ManyType& other) noexcept {
 /// If called directly, the caller is responsible
 /// for updating label correctly.
 ManyType::~ManyType() noexcept {
-    if (static_cast<ManyTypeLabelInt>(label) & static_cast<ManyTypeLabelInt>(ManyTypeLabel::Pointer)) {
-        if (static_cast<ManyTypeLabelInt>(label) & static_cast<ManyTypeLabelInt>(ManyTypeLabel::String)) {
+    if ((ManyTypeLabelInt)(label) & (ManyTypeLabelInt)(ManyTypeLabel::Pointer)) {
+        if ((ManyTypeLabelInt)(label) & (ManyTypeLabelInt)(ManyTypeLabel::String)) {
             delete value.String;
         }
         else {
@@ -258,7 +258,7 @@ void ManyType::makeCopyFrom(const ManyType& other, long recursionJuice) {
             break;
         case ManyTypeLabel::DataString:
         case ManyTypeLabel::StructureString:
-            if (static_cast<ManyTypeLabelInt>(label) & ~static_cast<ManyTypeLabelInt>(ManyTypeLabel::String)) {
+            if ((ManyTypeLabelInt)(label) & ~(ManyTypeLabelInt)(ManyTypeLabel::String)) {
                 // value is not string-compatible
                 this->~ManyType();
                 value.String = new std::string;
@@ -275,7 +275,7 @@ void ManyType::makeCopyFrom(const ManyType& other, long recursionJuice) {
             else {
                 --recursionJuice;
             }
-            if (static_cast<ManyTypeLabelInt>(label) & ~static_cast<ManyTypeLabelInt>(ManyTypeLabel::Vector)) {
+            if ((ManyTypeLabelInt)(label) & ~(ManyTypeLabelInt)(ManyTypeLabel::Vector)) {
                 // value is not vector-compatible
                 this->~ManyType();
                 value.Vector = new mtvec;
