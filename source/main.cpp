@@ -95,9 +95,9 @@ int main() {
 
         bindEverything();
 
-        // test_lexer("hi");
-        // test_lexer("");
-        test_lexer("p+");
+        test_lexer("hi");
+        test_lexer("");
+        test_lexer("1+2\"potato\"");
 
     }
     catch (ManyTypeAccessError& e) {

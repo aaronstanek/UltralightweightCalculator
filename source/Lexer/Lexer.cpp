@@ -85,8 +85,6 @@ long lexUOA(LexerToken* output, const char* input, long index) noexcept {
     return index;
 }
 
-#include <iostream>
-
 /// Marks characters with LexerToken::BO
 /// until it reaches the end of a binary operator.
 /// @param output Where the output will go, the token
@@ -99,8 +97,6 @@ long lexUOA(LexerToken* output, const char* input, long index) noexcept {
 /// a valid binary operator. If INVALID_INPUT is returned, then
 /// output will not have been changed.
 long lexBO(LexerToken* output, const char* input, long index) noexcept {
-    std::cout << "lexing input BO:" << input << std::endl;
-    std::cout << "at index: " << index << std::endl;
     int operatorLength = INVALID_INPUT;
     switch (input[index]) {
         case ',':
@@ -202,8 +198,8 @@ long lexBO(LexerToken* output, const char* input, long index) noexcept {
     while (operatorLength) {
         output[index] = LexerToken::BO;
         ++index;
+        --operatorLength;
     }
-    std::cout << "done with lex BO" << std::endl;
     return index;
 }
 
