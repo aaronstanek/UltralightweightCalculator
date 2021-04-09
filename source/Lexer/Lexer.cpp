@@ -290,16 +290,22 @@ long lexNumber(LexerToken* output, const char* input, long index) noexcept {
     // we might have an exponent
     if (input[index] == 'e' || input[index] == 'E') {
         output[index] = LexerToken::Number;
-        ++index;
+        t = index + 1;
         // the exponent might have a sign
         if (input[index] == '+' || input[index] == '-') {
             output[index] = LexerToken::Number;
-            ++index;
+            ++t;
         }
         // we must have digits here
-        if (lexNumberDigits(output,input,index) < 0) {
-            return INVALID_INPUT;
+        t = lexNumberDigits(output,input,t);
+        if (t >= 0) {
+            // we have a valid exponent
+            index = t;
         }
+        // if the above condition is false,
+        // and we do not have a valid exponent
+        // then index is not updated, and it will be
+        // as if we never saw the exponent e
     }
     // we have reached the end of the number
     // we should make sure that we are not in the middle
