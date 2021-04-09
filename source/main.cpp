@@ -98,6 +98,11 @@ int main() {
         test_lexer("hi");
         test_lexer("");
         test_lexer("1+2\"potato\"");
+        test_lexer("5/^[1,5,pi]");
+        test_lexer("apple(x,%m)->x+%m(x)");
+        test_lexer("apple (x,   %m)->x + %m(x)");
+        test_lexer("124231.321e3pat");
+        test_lexer("124231.321e-pat");
 
     }
     catch (ManyTypeAccessError& e) {
