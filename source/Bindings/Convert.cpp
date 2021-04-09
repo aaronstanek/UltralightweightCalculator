@@ -25,7 +25,7 @@ void float_implement(ManyType& ret, mtvec& arr, long recursionJuice) {
     ret = arr[1];
 }
 
-inline void bindConvert() {
+void bindConvert() {
     std::string baseName;
     baseName = "bool";
     placeBuiltInSymbol(baseName,&bool_implement,1,0);

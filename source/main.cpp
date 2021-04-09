@@ -28,7 +28,7 @@ int main() {
     // return 0;
     try {
 
-        // bindEverything();
+        bindEverything();
 
         std::string inputString;
         while (true) {

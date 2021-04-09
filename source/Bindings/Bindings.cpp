@@ -4,7 +4,7 @@
 */
 #include "Bindings.h"
 
-inline void bindEverything() {
+void bindEverything() {
     bindAssign();
     bindConstants();
     bindConvert();

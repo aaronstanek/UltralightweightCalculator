@@ -137,7 +137,7 @@ void remove2_implement(ManyType& ret, mtvec& arr, long recursionJuice) {
     ret.putBool(output);
 }
 
-inline void bindAssign() {
+void bindAssign() {
     std::string baseName;
     baseName = "assign";
     placeBuiltInSymbol(baseName,&assign_implement,2,0x01);

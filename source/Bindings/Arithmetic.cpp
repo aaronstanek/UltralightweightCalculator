@@ -35,7 +35,7 @@ void sub_implement(ManyType& ret, mtvec& arr, long recursionJuice) {
     ret.putFtype(output);
 }
 
-inline void bindArithmetic() {
+void bindArithmetic() {
     std::string baseName;
     baseName = "add";
     placeBuiltInSymbol(baseName,&add_implement,2,0);

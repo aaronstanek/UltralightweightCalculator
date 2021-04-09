@@ -51,7 +51,7 @@ void floatprecision_implement(ManyType& ret, mtvec& arr, long recursionJuice) no
     ret.putInt(FTYPE_PRECISION);
 }
 
-inline void bindConstants() {
+void bindConstants() {
     std::string baseName;
     baseName = "none";
     placeBuiltInSymbol(baseName,&none_implement,0,0);
